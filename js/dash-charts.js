@@ -28,8 +28,8 @@ $(document).ready(function() {
             name: 'Income',
             innerSize: '60%',
             data: [
-                { name: 'load percentage', y: 45.0, color: '#b2c831' },
-                { name: 'rest', y: 55.0, color: '#3d3d3d' }
+                { name: 'Porcentagem', y: 45.0, color: '#b2c831' },
+                { name: 'Resta', y: 55.0, color: '#3d3d3d' }
             ],
             dataLabels: {
                 enabled: false,
@@ -71,8 +71,8 @@ $(document).ready(function() {
             name: 'SiteInfo',
             innerSize: '65%',
             data: [
-                { name: 'Used', y: 65.0, color: '#fa1d2d' },
-                { name: 'Rest', y: 35.0, color: '#3d3d3d' }
+                { name: 'Porcentagem', y: 65.0, color: '#fa1d2d' },
+                { name: 'Resta', y: 35.0, color: '#3d3d3d' }
             ],
             dataLabels: {
                 enabled: false,

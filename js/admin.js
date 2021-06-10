@@ -1,43 +1,25 @@
-// Interactiveness now
+function time() { // Busca hora em tempo real
+    today = new Date();
+    h = today.getHours();
+    m = today.getMinutes();
+    s = today.getSeconds();
+    document.getElementById('relogio').innerHTML = h + ":" + m + ":" + s;
+    setTimeout('time()', 500);
+}
 
-(function() {
+//---------------------------------------------
+function fazGet(url) {
+    let request = new XMLHttpRequest()
+    request.open("GET", url, false)
+    request.send()
+    return request.responseText
+}
 
-	var clock = document.querySelector('digiclock');
-	
-	// But there is a little problem
-	// we need to pad 0-9 with an extra
-	// 0 on the left for hours, seconds, minutes
-	
-	var pad = function(x) {
-		return x < 10 ? '0'+x : x;
-	};
-	
-	var ticktock = function() {
-		var d = new Date();
-		
-		var h = pad( d.getHours() );
-		var m = pad( d.getMinutes() );
-		var s = pad( d.getSeconds() );
-		
-		var current_time = [h,m,s].join(':');
-		
-		if (clock) {
-		    clock.innerHTML = current_time;
-		}
-		
-	};
-	
-	ticktock();
-	
-	// Calling ticktock() every 1 second
-	setInterval(ticktock, 1000);
-	
-}());
 
-/* ---------- Notifications ---------- */
-	$('.noty').click(function(e){
-		e.preventDefault();
-		var options = $.parseJSON($(this).attr('data-noty-options'));
-		noty(options);
-	});
+function main() {
+    let data = fazGet("http://bl.ocks.org/mbostock/3887235");
+    let usuarios = JSON.parse(data);
+    let tabela = document.getElementById("load");;
+}
 
+main()

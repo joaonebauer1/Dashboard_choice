@@ -77,7 +77,7 @@
     </script>
 </head>
 
-<body>
+<body onload="time()">
 
     <!--  CABEÇALHO -->
 
@@ -134,7 +134,7 @@
                     <dtitle>Site</dtitle>
                     <hr>
                     <div id="load"></div>
-                    <h2>45%</h2>
+                    <h2 id="numero-site">45%</h2>
                 </div>
             </div>
 
@@ -155,7 +155,7 @@
                     <dtitle>Relógio</dtitle>
                     <hr>
                     <div class="clockcenter">
-                        <digiclock>12:45:25</digiclock>
+                        <digiclock id="relogio"></digiclock>
                     </div>
                 </div>
 
@@ -264,37 +264,29 @@
 
                 <!-- CAIXA STOCK -->
                 <div class="half-unit">
-                    <dtitle>Stock</dtitle>
+                    <dtitle>Aulas práticas</dtitle>
                     <hr>
                     <div class="cont">
-                        <div class="info-aapl">
-                            <h4>AAPL</h4>
-                            <ul>
-                                <li><span class="orange" style="height: 37.5%"></span></li>
-                                <li><span class="orange" style="height: 47.5%"></span></li>
-                                <li><span class="orange" style="height: 70%"></span></li>
-                                <li><span class="orange" style="height: 85%"></span></li>
-                                <li><span class="green" style="height: 75%"></span></li>
-                                <li><span class="green" style="height: 50%"></span></li>
-                                <li><span class="green" style="height: 15%"></span></li>
-                            </ul>
-                        </div>
+                        <p>
+                            <img src="images/ok.png" alt=""> 41 Aprovadas
+                            <br>
+                            <br>
+                            <img src="images/waiting.png" alt=""> 50 Contingentes</p>
                     </div>
                 </div>
 
                 <!-- CAIXA LISTA -->
                 <div class="half-unit">
-                    <dtitle>LISTA</dtitle>
+                    <dtitle>Aulas teóricas</dtitle>
                     <hr>
                     <div class="cont">
                         <p>
-                            <bold>13</bold> | Pending Tasks</p>
+                            <img src="images/agenda.png " alt=""> 100 Alunos agendados
+                            <br>
+                            <br>
+                            <img src="images/ok.png" alt=""> 75 Alunos presentes</p>
                     </div>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%;"><span class="sr-only">60% Complete</span>
 
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -302,25 +294,29 @@
 
                 <!-- CAIXA VISITAS -->
                 <div class="half-unit">
-                    <dtitle>VISITAS</dtitle>
+                    <dtitle>Agendamento (aulas práticas)</dtitle>
                     <hr>
                     <div class="cont">
                         <p>
-                            <bold>388</bold>
-                        </p>
-                        <p><img src="images/up-small.png" alt=""> 412 Max. | <img src="images/down-small.png" alt=""> 89 Min.</p>
+                            <img src="images/up-small.png" alt=""> 412 Realizadas
+                            <br>
+                            <br>
+                            <img src="images/down-small.png" alt=""> 89 Canceladas</p>
                     </div>
                 </div>
 
                 <!-- CAIXA BLOCK -->
                 <div class="half-unit">
-                    <dtitle>BLOCK</dtitle>
+                    <dtitle>Aulas teóricas</dtitle>
                     <hr>
                     <div class="cont">
-                        <p>
-                            <bold>145.0K</bold>
-                        </p>
-                        <p><img src="images/up-small.png" alt=""> 23.88%</p>
+                        <div class="cont">
+                            <p>
+                                <img src="images/agenda.png " alt=""> 25 Aulas agendados
+                                <br>
+                                <br>
+                                <img src="images/ok.png" alt=""> 23 Aulas realizadas</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -353,14 +349,19 @@
             <!-- CAIXA NEWS -->
             <div class="col-sm-3 col-lg-3">
                 <div class="dash-unit">
-                    <dtitle>News</dtitle>
+                    <dtitle>Boletos</dtitle>
                     <hr>
                     <div class="info-user">
                         <span aria-hidden="true" class="li_news fs2"></span>
                     </div>
                     <br>
                     <div class="text">
-                        <p><b>Alvarez.is:</b> A beautiful new Dashboard theme has been realised by Carlos Alvarez. Please, visit <a href="http://alvarez.is">Alvarez.is</a> for more details.</p>
+                        <p></p>
+                        <img src="images/pago.png " alt=""> 25 Pagos
+                        <p>Valor total: ???</p>
+                        <hr>
+                        <p><img src="images/nao-pago.png" alt=""> 23 Abertos</p>
+                        <p>Valor total: ???</p>
                         <p>
                             <grey>Last Update: 5 minutes ago.</grey>
                         </p>

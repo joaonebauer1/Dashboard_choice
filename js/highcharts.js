@@ -1,13 +1,10 @@
-/*
- Highcharts JS v2.3.3 (2012-10-04)
-
- (c) 2009-2011 Torstein Hønsi
-
- License: www.highcharts.com/license
-*/
 (function() {
-    function r(a, b) { var c;
-        a || (a = {}); for (c in b) a[c] = b[c]; return a }
+    function r(a, b) {
+        var c;
+        a || (a = {});
+        for (c in b) a[c] = b[c];
+        return a
+    }
 
     function ka() { for (var a = 0, b = arguments, c = b.length, d = {}; a < c; a++) d[b[a++]] = b[a]; return d }
 
@@ -33,18 +30,27 @@
 
     function t(a) { return a !== x && a !== null }
 
-    function z(a, b, c) { var d, e; if (la(b)) t(c) ? a.setAttribute(b, c) : a && a.getAttribute && (e = a.getAttribute(b));
+    function z(a, b, c) {
+        var d, e;
+        if (la(b)) t(c) ? a.setAttribute(b, c) : a && a.getAttribute && (e = a.getAttribute(b));
         else if (t(b) && X(b))
-            for (d in b) a.setAttribute(d, b[d]); return e }
+            for (d in b) a.setAttribute(d, b[d]);
+        return e
+    }
 
     function na(a) { return Ha(a) ? a : [a] }
 
-    function o() { var a = arguments,
-            b, c, d = a.length; for (b = 0; b < d; b++)
-            if (c = a[b], typeof c !== "undefined" && c !== null) return c }
+    function o() {
+        var a = arguments,
+            b, c, d = a.length;
+        for (b = 0; b < d; b++)
+            if (c = a[b], typeof c !== "undefined" && c !== null) return c
+    }
 
-    function H(a, b) { if (Ca && b && b.opacity !== x) b.filter = "alpha(opacity=" + b.opacity * 100 + ")";
-        r(a.style, b) }
+    function H(a, b) {
+        if (Ca && b && b.opacity !== x) b.filter = "alpha(opacity=" + b.opacity * 100 + ")";
+        r(a.style, b)
+    }
 
     function Q(a, b, c, d, e) {
         a = C.createElement(a);
@@ -55,9 +61,12 @@
         return a
     }
 
-    function ca(a, b) { var c = function() {};
+    function ca(a, b) {
+        var c = function() {};
         c.prototype = new a;
-        r(c.prototype, b); return c }
+        r(c.prototype, b);
+        return c
+    }
 
     function Ia(a, b, c, d) {
         var e = M.lang,
@@ -75,11 +84,15 @@
 
     function sa(a, b) { return Array((b || 2) + 1 - String(a).length).join(0) + a }
 
-    function hb(a, b, c, d) { var e, c = o(c, 1);
+    function hb(a, b, c, d) {
+        var e, c = o(c, 1);
         e = a / c;
-        b || (b = [1, 2, 2.5, 5, 10], d && d.allowDecimals === !1 && (c === 1 ? b = [1, 2, 5, 10] : c <= 0.1 && (b = [1 / c]))); for (d = 0; d < b.length; d++)
+        b || (b = [1, 2, 2.5, 5, 10], d && d.allowDecimals === !1 && (c === 1 ? b = [1, 2, 5, 10] : c <= 0.1 && (b = [1 / c])));
+        for (d = 0; d < b.length; d++)
             if (a = b[d], e <= (b[d] + (b[d + 1] || b[d])) / 2) break;
-        a *= c; return a }
+        a *= c;
+        return a
+    }
 
     function Nb(a, b) {
         var c = b || [
@@ -130,9 +143,13 @@
 
     function Eb() { this.symbol = this.color = 0 }
 
-    function Fb(a, b) { var c = a.length,
-            d, e; for (e = 0; e < c; e++) a[e].ss_i = e;
-        a.sort(function(a, c) { d = b(a, c); return d === 0 ? a.ss_i - c.ss_i : d }); for (e = 0; e < c; e++) delete a[e].ss_i }
+    function Fb(a, b) {
+        var c = a.length,
+            d, e;
+        for (e = 0; e < c; e++) a[e].ss_i = e;
+        a.sort(function(a, c) { d = b(a, c); return d === 0 ? a.ss_i - c.ss_i : d });
+        for (e = 0; e < c; e++) delete a[e].ss_i
+    }
 
     function Ma(a) { for (var b = a.length, c = a[0]; b--;) a[b] < c && (c = a[b]); return c }
 
@@ -140,13 +157,18 @@
 
     function Ea(a, b) { for (var c in a) a[c] && a[c] !== b && a[c].destroy && a[c].destroy(), delete a[c] }
 
-    function Na(a) { Za || (Za = Q(ia));
+    function Na(a) {
+        Za || (Za = Q(ia));
         a && Za.appendChild(a);
-        Za.innerHTML = "" }
+        Za.innerHTML = ""
+    }
 
     function $a(a,
-        b) { var c = "Highcharts error #" + a + ": www.highcharts.com/errors/" + a; if (b) throw c;
-        else K.console && console.log(c) }
+        b) {
+        var c = "Highcharts error #" + a + ": www.highcharts.com/errors/" + a;
+        if (b) throw c;
+        else K.console && console.log(c)
+    }
 
     function ea(a) { return parseFloat(a.toPrecision(14)) }
 
@@ -172,11 +194,13 @@
 
     function va() {}
 
-    function Pa(a, b, c) { this.axis = a;
+    function Pa(a, b, c) {
+        this.axis = a;
         this.pos = b;
         this.type = c || "";
         this.isNew = !0;
-        c || this.addLabel() }
+        c || this.addLabel()
+    }
 
     function nb(a, b) { this.axis = a; if (b) this.options = b, this.id = b.id; return this }
 
@@ -200,7 +224,8 @@
 
     function ob() { this.init.apply(this, arguments) }
 
-    function pb(a, b) { var c = b.borderWidth,
+    function pb(a, b) {
+        var c = b.borderWidth,
             d = b.style,
             e = w(d.padding);
         this.chart = a;
@@ -210,14 +235,17 @@
         this.isHidden = !0;
         this.label = a.renderer.label("", 0, 0, b.shape, null, null, b.useHTML, null, "tooltip").attr({ padding: e, fill: b.backgroundColor, "stroke-width": c, r: b.borderRadius, zIndex: 8 }).css(d).css({ padding: 0 }).hide().add();
         U || this.label.shadow(b.shadow);
-        this.shared = b.shared }
+        this.shared = b.shared
+    }
 
-    function qb(a, b) { var c = U ? "" : b.chart.zoomType;
+    function qb(a, b) {
+        var c = U ? "" : b.chart.zoomType;
         this.zoomX = /x/.test(c);
         this.zoomY = /y/.test(c);
         this.options = b;
         this.chart = a;
-        this.init(a, b.tooltip) }
+        this.init(a, b.tooltip)
+    }
 
     function rb(a) { this.init(a) }
 
@@ -322,11 +350,15 @@
             h && (b = b.concat(h), c = c.concat(i));
             return [b, c]
         },
-        step: function(a, b, c, d) { var e = [],
-                f = a.length; if (c === 1) e = d;
+        step: function(a, b, c, d) {
+            var e = [],
+                f = a.length;
+            if (c === 1) e = d;
             else if (f === b.length && c < 1)
                 for (; f--;) d = parseFloat(a[f]), e[f] = isNaN(d) ? a[f] : c * parseFloat(b[f] - d) + d;
-            else e = b; return e }
+            else e = b;
+            return e
+        }
     };
     (function(a) {
         K.HighchartsAdapter = K.HighchartsAdapter || a && {
@@ -341,12 +373,18 @@
                         d,
                         k, l;
                     b === "cur" ? e = c.prototype : b === "_default" && f && (e = g[b], b = "set");
-                    (k = e[b]) && (e[b] = function(c) { c = a ? c : this;
-                        l = c.elem; return l.attr ? l.attr(c.prop, b === "cur" ? x : c.now) : k.apply(this, arguments) })
+                    (k = e[b]) && (e[b] = function(c) {
+                        c = a ? c : this;
+                        l = c.elem;
+                        return l.attr ? l.attr(c.prop, b === "cur" ? x : c.now) : k.apply(this, arguments)
+                    })
                 });
-                e = function(a) { var c = a.elem,
-                        d; if (!a.started) d = b.init(c, c.d, c.toD), a.start = d[0], a.end = d[1], a.started = !0;
-                    c.attr("d", b.step(a.start, a.end, a.pos, c.toD)) };
+                e = function(a) {
+                    var c = a.elem,
+                        d;
+                    if (!a.started) d = b.init(c, c.d, c.toD), a.start = d[0], a.end = d[1], a.started = !0;
+                    c.attr("d", b.step(a.start, a.end, a.pos, c.toD))
+                };
                 f ? g.d = { set: e } : d.d = e;
                 this.each = Array.prototype.forEach ? function(a, b) { return Array.prototype.forEach.call(a, b) } : function(a, b) {
                     for (var c = 0, d = a.length; c < d; c++)
@@ -368,16 +406,21 @@
                 a(b).unbind(c,
                     d)
             },
-            fireEvent: function(b, c, d, e) { var f = a.Event(c),
+            fireEvent: function(b, c, d, e) {
+                var f = a.Event(c),
                     g = "detached" + c,
-                    h;!Ca && d && (delete d.layerX, delete d.layerY);
+                    h;
+                !Ca && d && (delete d.layerX, delete d.layerY);
                 r(f, d);
                 b[c] && (b[g] = b[c], b[c] = null);
-                a.each(["preventDefault", "stopPropagation"], function(a, b) { var c = f[b];
-                    f[b] = function() { try { c.call(f) } catch (a) { b === "preventDefault" && (h = !0) } } });
+                a.each(["preventDefault", "stopPropagation"], function(a, b) {
+                    var c = f[b];
+                    f[b] = function() { try { c.call(f) } catch (a) { b === "preventDefault" && (h = !0) } }
+                });
                 a(b).trigger(f);
                 b[g] && (b[c] = b[g], b[g] = null);
-                e && !f.isDefaultPrevented() && !h && e(f) },
+                e && !f.isDefaultPrevented() && !h && e(f)
+            },
             washMouseEvent: function(a) { var c = a.originalEvent || a; if (c.pageX === x) c.pageX = a.pageX, c.pageY = a.pageY; return c },
             animate: function(b, c, d) {
                 var e =
@@ -517,7 +560,8 @@
         var b = [],
             c;
         (function(a) {
-            (c = /rgba\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]?(?:\.[0-9]+)?)\s*\)/.exec(a)) ? b = [w(c[1]), w(c[2]), w(c[3]), parseFloat(c[4], 10)]: (c = /#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/.exec(a)) && (b = [w(c[1], 16), w(c[2], 16), w(c[3], 16), 1]) })(a);
+            (c = /rgba\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]?(?:\.[0-9]+)?)\s*\)/.exec(a)) ? b = [w(c[1]), w(c[2]), w(c[3]), parseFloat(c[4], 10)]: (c = /#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/.exec(a)) && (b = [w(c[1], 16), w(c[2], 16), w(c[3], 16), 1])
+        })(a);
         return {
             get: function(c) {
                 return b && !isNaN(b[0]) ? c === "rgb" ? "rgb(" + b[0] + "," + b[1] + "," + b[2] + ")" : c === "a" ?
@@ -528,12 +572,20 @@
         }
     };
     va.prototype = {
-        init: function(a, b) { this.element = b === "span" ? Q(b) : C.createElementNS(pa, b);
+        init: function(a, b) {
+            this.element = b === "span" ? Q(b) : C.createElementNS(pa, b);
             this.renderer = a;
-            this.attrSetters = {} },
-        animate: function(a, b, c) { b = o(b, Oa, !0);
-            eb(this); if (b) { b = A(b); if (c) b.complete = c;
-                xb(this, a, b) } else this.attr(a), c && c() },
+            this.attrSetters = {}
+        },
+        animate: function(a, b, c) {
+            b = o(b, Oa, !0);
+            eb(this);
+            if (b) {
+                b = A(b);
+                if (c) b.complete = c;
+                xb(this, a, b)
+            } else this.attr(a), c && c()
+        },
         attr: function(a, b) {
             var c, d, e, f, g = this.element,
                 h = g.nodeName.toLowerCase(),
@@ -584,9 +636,11 @@
                             j || z(g, c, d)
                     } return u
         },
-        symbolAttr: function(a) { var b = this;
+        symbolAttr: function(a) {
+            var b = this;
             n("x,y,r,start,end,width,height,innerR,anchorX,anchorY".split(","), function(c) { b[c] = o(a[c], b[c]) });
-            b.attr({ d: b.renderer.symbols[b.symbolName](b.x, b.y, b.width, b.height, b) }) },
+            b.attr({ d: b.renderer.symbols[b.symbolName](b.x, b.y, b.width, b.height, b) })
+        },
         clip: function(a) { return this.attr("clip-path", a ? "url(" + this.renderer.url + "#" + a.id + ")" : R) },
         crisp: function(a, b, c, d, e) {
             var f, g = {},
@@ -602,23 +656,38 @@
             for (f in h) this[f] !== h[f] && (this[f] = g[f] = h[f]);
             return g
         },
-        css: function(a) { var b = this.element,
+        css: function(a) {
+            var b = this.element,
                 b = a && a.width && b.nodeName.toLowerCase() === "text",
                 c, d = "",
-                e = function(a, b) { return "-" + b.toLowerCase() }; if (a && a.color) a.fill = a.color;
+                e = function(a, b) { return "-" + b.toLowerCase() };
+            if (a && a.color) a.fill = a.color;
             this.styles = a = r(this.styles, a);
-            U && b && delete a.width; if (Ca && !Z) b && delete a.width, H(this.element, a);
-            else { for (c in a) d += c.replace(/([A-Z])/g, e) + ":" + a[c] + ";";
-                this.attr({ style: d }) }
-            b && this.added && this.renderer.buildText(this); return this },
-        on: function(a, b) { var c = b;
-            fa && a === "click" && (a = "touchstart", c = function(a) { a.preventDefault();
-                b() });
-            this.element["on" + a] = c; return this },
+            U && b && delete a.width;
+            if (Ca && !Z) b && delete a.width, H(this.element, a);
+            else {
+                for (c in a) d += c.replace(/([A-Z])/g, e) + ":" + a[c] + ";";
+                this.attr({ style: d })
+            }
+            b && this.added && this.renderer.buildText(this);
+            return this
+        },
+        on: function(a, b) {
+            var c = b;
+            fa && a === "click" && (a = "touchstart", c = function(a) {
+                a.preventDefault();
+                b()
+            });
+            this.element["on" + a] = c;
+            return this
+        },
         setRadialReference: function(a) { this.element.radialReference = a; return this },
         translate: function(a, b) { return this.attr({ translateX: a, translateY: b }) },
-        invert: function() { this.inverted = !0;
-            this.updateTransform(); return this },
+        invert: function() {
+            this.inverted = !0;
+            this.updateTransform();
+            return this
+        },
         htmlCss: function(a) {
             var b = this.element;
             if (b = a && b.tagName === "SPAN" && a.width) delete a.width, this.textWidth = b, this.updateTransform();
@@ -627,9 +696,15 @@
             H(this.element, a);
             return this
         },
-        htmlGetBBox: function() { var a = this.element,
-                b = this.bBox; if (!b) { if (a.nodeName === "text") a.style.position = "absolute";
-                b = this.bBox = { x: a.offsetLeft, y: a.offsetTop, width: a.offsetWidth, height: a.offsetHeight } } return b },
+        htmlGetBBox: function() {
+            var a = this.element,
+                b = this.bBox;
+            if (!b) {
+                if (a.nodeName === "text") a.style.position = "absolute";
+                b = this.bBox = { x: a.offsetLeft, y: a.offsetTop, width: a.offsetWidth, height: a.offsetHeight }
+            }
+            return b
+        },
         htmlUpdateTransform: function() {
             if (this.added) {
                 var a = this.renderer,
@@ -680,7 +755,8 @@
                 }
             } else this.alignOnAdd = !0
         },
-        updateTransform: function() { var a = this.translateX || 0,
+        updateTransform: function() {
+            var a = this.translateX || 0,
                 b = this.translateY || 0,
                 c = this.inverted,
                 d = this.rotation,
@@ -688,9 +764,13 @@
             c && (a += this.attr("width"), b += this.attr("height"));
             (a || b) && e.push("translate(" + a + "," + b + ")");
             c ? e.push("rotate(90) scale(-1,1)") : d && e.push("rotate(" + d + " " + (this.x || 0) + " " + (this.y || 0) + ")");
-            e.length && z(this.element, "transform", e.join(" ")) },
-        toFront: function() { var a = this.element;
-            a.parentNode.appendChild(a); return this },
+            e.length && z(this.element, "transform", e.join(" "))
+        },
+        toFront: function() {
+            var a = this.element;
+            a.parentNode.appendChild(a);
+            return this
+        },
         align: function(a, b, c) {
             a ? (this.alignOptions = a, this.alignByTranslate = b, c ||
                 this.renderer.alignedObjects.push(this)) : (a = this.alignOptions, b = this.alignByTranslate);
@@ -717,53 +797,84 @@
                 e = this.element,
                 f = this.styles,
                 g = d * ab;
-            if (!a) { if (e.namespaceURI === pa || b.forExport) { try { a = e.getBBox ? r({}, e.getBBox()) : { width: e.offsetWidth, height: e.offsetHeight } } catch (h) {} if (!a || a.width < 0) a = { width: 0, height: 0 } } else a = this.htmlGetBBox(); if (b.isSVG && (b = a.width, c = a.height, d)) a.width = L(c * Y(g)) + L(b * V(g)), a.height = L(c * V(g)) + L(b * Y(g)); if (Ca && f && f.fontSize === "11px" && c === 22.700000762939453) a.height = 14;
-                this.bBox = a }
+            if (!a) {
+                if (e.namespaceURI === pa || b.forExport) { try { a = e.getBBox ? r({}, e.getBBox()) : { width: e.offsetWidth, height: e.offsetHeight } } catch (h) {} if (!a || a.width < 0) a = { width: 0, height: 0 } } else a = this.htmlGetBBox();
+                if (b.isSVG && (b = a.width, c = a.height, d)) a.width = L(c * Y(g)) + L(b * V(g)), a.height = L(c * V(g)) + L(b * Y(g));
+                if (Ca && f && f.fontSize === "11px" && c === 22.700000762939453) a.height = 14;
+                this.bBox = a
+            }
             return a
         },
         show: function() { return this.attr({ visibility: "visible" }) },
         hide: function() { return this.attr({ visibility: "hidden" }) },
-        add: function(a) { var b = this.renderer,
+        add: function(a) {
+            var b = this.renderer,
                 c = a || b,
                 d = c.element || b.box,
                 e = d.childNodes,
                 f = this.element,
                 g = z(f, "zIndex"),
-                h; if (a) this.parentGroup = a;
+                h;
+            if (a) this.parentGroup = a;
             this.parentInverted = a && a.inverted;
-            this.textStr !== void 0 && b.buildText(this); if (g) c.handleZ = !0, g = w(g); if (c.handleZ)
+            this.textStr !== void 0 && b.buildText(this);
+            if (g) c.handleZ = !0, g = w(g);
+            if (c.handleZ)
                 for (c = 0; c < e.length; c++)
-                    if (a = e[c], b = z(a, "zIndex"), a !== f && (w(b) > g || !t(g) && t(b))) { d.insertBefore(f, a);
-                        h = !0; break }
+                    if (a = e[c], b = z(a, "zIndex"), a !== f && (w(b) > g || !t(g) && t(b))) {
+                        d.insertBefore(f, a);
+                        h = !0;
+                        break
+                    }
             h || d.appendChild(f);
             this.added = !0;
-            E(this, "add"); return this },
+            E(this, "add");
+            return this
+        },
         safeRemoveChild: function(a) {
             var b =
                 a.parentNode;
             b && b.removeChild(a)
         },
-        destroy: function() { var a = this,
+        destroy: function() {
+            var a = this,
                 b = a.element || {},
                 c = a.shadows,
                 d, e;
             b.onclick = b.onmouseout = b.onmouseover = b.onmousemove = null;
-            eb(a); if (a.clipPath) a.clipPath = a.clipPath.destroy(); if (a.stops) { for (e = 0; e < a.stops.length; e++) a.stops[e] = a.stops[e].destroy();
-                a.stops = null }
+            eb(a);
+            if (a.clipPath) a.clipPath = a.clipPath.destroy();
+            if (a.stops) {
+                for (e = 0; e < a.stops.length; e++) a.stops[e] = a.stops[e].destroy();
+                a.stops = null
+            }
             a.safeRemoveChild(b);
             c && n(c, function(b) { a.safeRemoveChild(b) });
-            Ba(a.renderer.alignedObjects, a); for (d in a) delete a[d]; return null },
+            Ba(a.renderer.alignedObjects, a);
+            for (d in a) delete a[d];
+            return null
+        },
         empty: function() { for (var a = this.element, b = a.childNodes, c = b.length; c--;) a.removeChild(b[c]) },
-        shadow: function(a, b, c) { var d = [],
+        shadow: function(a, b, c) {
+            var d = [],
                 e, f, g = this.element,
-                h, i, j, k; if (a) { i = o(a.width, 3);
+                h, i, j, k;
+            if (a) {
+                i = o(a.width, 3);
                 j = (a.opacity || 0.15) / i;
-                k = this.parentInverted ? "(-1,-1)" : "(" + o(a.offsetX, 1) + ", " + o(a.offsetY, 1) + ")"; for (e = 1; e <= i; e++) { f = g.cloneNode(0);
+                k = this.parentInverted ? "(-1,-1)" : "(" + o(a.offsetX, 1) + ", " + o(a.offsetY, 1) + ")";
+                for (e = 1; e <= i; e++) {
+                    f = g.cloneNode(0);
                     h = i * 2 + 1 - 2 * e;
-                    z(f, { isShadow: "true", stroke: a.color || "black", "stroke-opacity": j * e, "stroke-width": h, transform: "translate" + k, fill: R }); if (c) z(f, "height", y(z(f, "height") - h, 0)), f.cutHeight = h;
+                    z(f, { isShadow: "true", stroke: a.color || "black", "stroke-opacity": j * e, "stroke-width": h, transform: "translate" + k, fill: R });
+                    if (c) z(f, "height", y(z(f, "height") - h, 0)), f.cutHeight = h;
                     b ? b.element.appendChild(f) : g.parentNode.insertBefore(f, g);
-                    d.push(f) }
-                this.shadows = d } return this }
+                    d.push(f)
+                }
+                this.shadows = d
+            }
+            return this
+        }
     };
     var ra = function() {
         this.init.apply(this,
@@ -787,17 +898,23 @@
             this.setSize(b, c, !1);
             var g;
             if (bb && a.getBoundingClientRect) this.subPixelFix =
-                b = function() { H(a, { left: 0, top: 0 });
+                b = function() {
+                    H(a, { left: 0, top: 0 });
                     g = a.getBoundingClientRect();
-                    H(a, { left: wa(g.left) - g.left + "px", top: wa(g.top) - g.top + "px" }) }, b(), I(K, "resize", b)
+                    H(a, { left: wa(g.left) - g.left + "px", top: wa(g.top) - g.top + "px" })
+                }, b(), I(K, "resize", b)
         },
         isHidden: function() { return !this.boxWrapper.getBBox().width },
-        destroy: function() { var a = this.defs;
+        destroy: function() {
+            var a = this.defs;
             this.box = null;
             this.boxWrapper = this.boxWrapper.destroy();
             Ea(this.gradients || {});
-            this.gradients = null; if (a) this.defs = a.destroy();
-            this.subPixelFix && S(K, "resize", this.subPixelFix); return this.alignedObjects = null },
+            this.gradients = null;
+            if (a) this.defs = a.destroy();
+            this.subPixelFix && S(K, "resize", this.subPixelFix);
+            return this.alignedObjects = null
+        },
         createElement: function(a) {
             var b = new this.Element;
             b.init(this,
@@ -823,12 +940,20 @@
                         c = (c.replace(/<(.|\n)*?>/g, "") || " ").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
                         o.appendChild(C.createTextNode(c));
                         da ? m.dx = 3 : m.x = g;
-                        if (!da) { if (d) {!Z && a.renderer.forExport && H(o, { display: "block" });
-                                q = K.getComputedStyle && w(K.getComputedStyle(k, null).getPropertyValue("line-height")); if (!q || isNaN(q)) { var F; if (!(F = j))
+                        if (!da) {
+                            if (d) {
+                                !Z && a.renderer.forExport && H(o, { display: "block" });
+                                q = K.getComputedStyle && w(K.getComputedStyle(k, null).getPropertyValue("line-height"));
+                                if (!q || isNaN(q)) {
+                                    var F;
+                                    if (!(F = j))
                                         if (!(F = k.offsetHeight)) l[d] = b.getBBox ? b.getBBox().height : a.renderer.fontMetrics(b.style.fontSize).h, F = s(l[d] - (l[d - 1] || 0)) || 18;
-                                    q = F }
-                                z(o, "dy", q) }
-                            k = o }
+                                    q = F
+                                }
+                                z(o, "dy", q)
+                            }
+                            k = o
+                        }
                         z(o, m);
                         b.appendChild(o);
                         da++;
@@ -862,18 +987,27 @@
             p = g.style;
             delete g.style;
             I(h.element, "mouseenter", function() { h.attr(f).css(m) });
-            I(h.element, "mouseleave", function() { j = [e, f, g][i];
+            I(h.element, "mouseleave", function() {
+                j = [e, f, g][i];
                 k = [l, m, p][i];
-                h.attr(j).css(k) });
+                h.attr(j).css(k)
+            });
             h.setState = function(a) {
-                (i = a) ? a === 2 && h.attr(g).css(p): h.attr(e).css(l) };
+                (i = a) ? a === 2 && h.attr(g).css(p): h.attr(e).css(l)
+            };
             return h.on("click", function() { d.call(h) }).attr(e).css(r({ cursor: "default" },
                 l))
         },
-        crispLine: function(a, b) { a[1] === a[4] && (a[1] = a[4] = s(a[1]) - b % 2 / 2);
-            a[2] === a[5] && (a[2] = a[5] = s(a[2]) + b % 2 / 2); return a },
-        path: function(a) { var b = { fill: R };
-            Ha(a) ? b.d = a : X(a) && r(b, a); return this.createElement("path").attr(b) },
+        crispLine: function(a, b) {
+            a[1] === a[4] && (a[1] = a[4] = s(a[1]) - b % 2 / 2);
+            a[2] === a[5] && (a[2] = a[5] = s(a[2]) + b % 2 / 2);
+            return a
+        },
+        path: function(a) {
+            var b = { fill: R };
+            Ha(a) ? b.d = a : X(a) && r(b, a);
+            return this.createElement("path").attr(b)
+        },
         circle: function(a, b, c) { a = X(a) ? a : { x: a, y: b, r: c }; return this.createElement("circle").attr(a) },
         arc: function(a, b, c, d, e, f) { if (X(a)) b = a.y, c = a.r, d = a.innerR, e = a.start, f = a.end, a = a.x; return this.symbol("arc", a || 0, b || 0, c || 0, c || 0, { innerR: d || 0, start: e || 0, end: f || 0 }) },
         rect: function(a, b, c, d, e, f) {
@@ -882,10 +1016,13 @@
             e = this.createElement("rect").attr({ rx: e, ry: e, fill: R });
             return e.attr(X(a) ? a : e.crisp(f, a, b, y(c, 0), y(d, 0)))
         },
-        setSize: function(a, b, c) { var d = this.alignedObjects,
+        setSize: function(a, b, c) {
+            var d = this.alignedObjects,
                 e = d.length;
             this.width = a;
-            this.height = b; for (this.boxWrapper[o(c, !0) ? "animate" : "attr"]({ width: a, height: b }); e--;) d[e].align() },
+            this.height = b;
+            for (this.boxWrapper[o(c, !0) ? "animate" : "attr"]({ width: a, height: b }); e--;) d[e].align()
+        },
         g: function(a) { var b = this.createElement("g"); return t(a) ? b.attr({ "class": "highcharts-" + a }) : b },
         image: function(a, b, c, d, e) {
             var f = { preserveAspectRatio: R };
@@ -899,8 +1036,10 @@
                 h = h && h(s(b), s(c), d, e, f),
                 i = /^url\((.*?)\)$/,
                 j, k;
-            h ? (g = this.path(h), r(g, { symbolName: a, x: b, y: c, width: d, height: e }), f && r(g, f)) : i.test(a) && (k = function(a, b) { a.attr({ width: b[0], height: b[1] });
-                a.alignByTranslate || a.translate(-s(b[0] / 2), -s(b[1] / 2)) }, j = a.match(i)[1], a = Jb[j], g = this.image(j).attr({ x: b, y: c }), a ? k(g, a) : (g.attr({
+            h ? (g = this.path(h), r(g, { symbolName: a, x: b, y: c, width: d, height: e }), f && r(g, f)) : i.test(a) && (k = function(a, b) {
+                a.attr({ width: b[0], height: b[1] });
+                a.alignByTranslate || a.translate(-s(b[0] / 2), -s(b[1] / 2))
+            }, j = a.match(i)[1], a = Jb[j], g = this.image(j).attr({ x: b, y: c }), a ? k(g, a) : (g.attr({
                 width: 0,
                 height: 0
             }), Q("img", { onload: function() { k(g, Jb[j] = [this.width, this.height]) }, src: j })));
@@ -916,7 +1055,8 @@
                     c / 2, b + d, a, b + d / 2, "Z"
                 ]
             },
-            arc: function(a, b, c, d, e) { var f = e.start,
+            arc: function(a, b, c, d, e) {
+                var f = e.start,
                     c = e.r || c || d,
                     g = e.end - 1.0E-6,
                     d = e.innerR,
@@ -925,13 +1065,18 @@
                     j = Y(f),
                     k = V(g),
                     g = Y(g),
-                    e = e.end - f < xa ? 0 : 1; return ["M", a + c * i, b + c * j, "A", c, c, 0, e, 1, a + c * k, b + c * g, h ? "M" : "L", a + d * k, b + d * g, "A", d, d, 0, e, 0, a + d * i, b + d * j, h ? "" : "Z"] }
+                    e = e.end - f < xa ? 0 : 1;
+                return ["M", a + c * i, b + c * j, "A", c, c, 0, e, 1, a + c * k, b + c * g, h ? "M" : "L", a + d * k, b + d * g, "A", d, d, 0, e, 0, a + d * i, b + d * j, h ? "" : "Z"]
+            }
         },
-        clipRect: function(a, b, c, d) { var e = "highcharts-" + ub++,
+        clipRect: function(a, b, c, d) {
+            var e = "highcharts-" + ub++,
                 f = this.createElement("clipPath").attr({ id: e }).add(this.defs),
                 a = this.rect(a, b, c, d, 0).add(f);
             a.id = e;
-            a.clipPath = f; return a },
+            a.clipPath = f;
+            return a
+        },
         color: function(a, b, c) {
             var d = this,
                 e, f = /^rgba/,
@@ -969,22 +1114,34 @@
                 f = e.attrSetters,
                 g = e.element,
                 h = e.renderer;
-            f.text = function(a) { a !== g.innerHTML && delete this.bBox;
-                g.innerHTML = a; return !1 };
-            f.x = f.y = f.align = function(a, b) { b === "align" && (b = "textAlign");
+            f.text = function(a) {
+                a !== g.innerHTML && delete this.bBox;
+                g.innerHTML = a;
+                return !1
+            };
+            f.x = f.y = f.align = function(a, b) {
+                b === "align" && (b = "textAlign");
                 e[b] = a;
-                e.htmlUpdateTransform(); return !1 };
+                e.htmlUpdateTransform();
+                return !1
+            };
             e.attr({ text: a, x: s(b), y: s(c) }).css({ position: "absolute", whiteSpace: "nowrap", fontFamily: d.fontFamily, fontSize: d.fontSize });
             e.css = e.htmlCss;
             if (h.isSVG) e.add = function(a) {
                 var b,
                     c = h.box.parentNode,
                     d = [];
-                if (a) { if (b = a.div, !b) { for (; a;) d.push(a), a = a.parentGroup;
-                        n(d.reverse(), function(a) { var d;
+                if (a) {
+                    if (b = a.div, !b) {
+                        for (; a;) d.push(a), a = a.parentGroup;
+                        n(d.reverse(), function(a) {
+                            var d;
                             b = a.div = a.div || Q(ia, { className: z(a.element, "class") }, { position: "absolute", left: (a.translateX || 0) + "px", top: (a.translateY || 0) + "px" }, b || c);
                             d = b.style;
-                            r(a.attrSetters, { translateX: function(a) { d.left = a + "px" }, translateY: function(a) { d.top = a + "px" }, visibility: function(a, b) { d[b] = a } }) }) } } else b = c;
+                            r(a.attrSetters, { translateX: function(a) { d.left = a + "px" }, translateY: function(a) { d.top = a + "px" }, visibility: function(a, b) { d[b] = a } })
+                        })
+                    }
+                } else b = c;
                 b.appendChild(g);
                 e.added = !0;
                 e.alignOnAdd && e.htmlUpdateTransform();
@@ -1000,20 +1157,25 @@
             return { h: a, b: b }
         },
         label: function(a, b, c, d, e, f, g, h, i) {
-            function j() { var a = p.styles,
+            function j() {
+                var a = p.styles,
                     a = a && a.textAlign,
                     b = aa * (1 - D),
                     c;
-                c = h ? 0 : yb; if (t(Ga) && (a === "center" || a === "right")) b += { center: 0.5, right: 1 }[a] * (Ga - q.width);
+                c = h ? 0 : yb;
+                if (t(Ga) && (a === "center" || a === "right")) b += { center: 0.5, right: 1 }[a] * (Ga - q.width);
                 (b !== u.x || c !== u.y) && u.attr({ x: b, y: c });
                 u.x = b;
-                u.y = c }
+                u.y = c
+            }
 
             function k(a, b) { o ? o.attr(a, b) : fb[a] = b }
 
-            function l() { u.add(p);
+            function l() {
+                u.add(p);
                 p.attr({ text: a, x: b, y: c });
-                t(e) && p.attr({ anchorX: e, anchorY: f }) }
+                t(e) && p.attr({ anchorX: e, anchorY: f })
+            }
             var m = this,
                 p = m.g(i),
                 u = m.text("", 0, 0, g).attr({ zIndex: 1 }),
@@ -1042,19 +1204,34 @@
                 j();
                 return !1
             };
-            g["stroke-width"] = function(a, b) { P = a % 2 / 2;
-                k(b, a); return !1 };
+            g["stroke-width"] = function(a, b) {
+                P = a % 2 / 2;
+                k(b, a);
+                return !1
+            };
             g.stroke = g.fill = g.r = function(a, b) { k(b, a); return !1 };
-            g.anchorX = function(a, b) { e = a;
-                k(b, a + P - F); return !1 };
-            g.anchorY = function(a, b) { f = a;
-                k(b, a - y); return !1 };
-            g.x = function(a) { p.x = a;
+            g.anchorX = function(a, b) {
+                e = a;
+                k(b, a + P - F);
+                return !1
+            };
+            g.anchorY = function(a, b) {
+                f = a;
+                k(b, a - y);
+                return !1
+            };
+            g.x = function(a) {
+                p.x = a;
                 a -= D * ((Ga || q.width) + aa);
                 F = s(a);
-                p.attr("translateX", F); return !1 };
-            g.y = function(a) { y = p.y = s(a);
-                p.attr("translateY", a); return !1 };
+                p.attr("translateX", F);
+                return !1
+            };
+            g.y = function(a) {
+                y = p.y = s(a);
+                p.attr("translateY", a);
+                return !1
+            };
             var w = p.css;
             return r(p, {
                 css: function(a) {
@@ -1068,12 +1245,14 @@
                 },
                 getBBox: function() { return o.getBBox() },
                 shadow: function(a) { o.shadow(a); return p },
-                destroy: function() { S(p, "add", l);
+                destroy: function() {
+                    S(p, "add", l);
                     S(p.element, "mouseenter");
                     S(p.element, "mouseleave");
                     u && (u = u.destroy());
                     o && (o = o.destroy());
-                    va.prototype.destroy.call(p) }
+                    va.prototype.destroy.call(p)
+                }
             })
         }
     };
@@ -1123,17 +1302,23 @@
                             e !== x && (d = e);
                             if (j && /^(x|y|r|start|end|width|height|innerR|anchorX|anchorY)/.test(c)) k || (this.symbolAttr(a),
                                 k = !0), m = !0;
-                            else if (c === "d") { d = d || [];
+                            else if (c === "d") {
+                                d = d || [];
                                 this.d = d.join(" ");
-                                e = d.length; for (m = []; e--;) m[e] = Aa(d[e]) ? s(d[e] * 10) - 5 : d[e] === "Z" ? "x" : d[e];
+                                e = d.length;
+                                for (m = []; e--;) m[e] = Aa(d[e]) ? s(d[e] * 10) - 5 : d[e] === "Z" ? "x" : d[e];
                                 d = m.join(" ") || "x";
-                                f.path = d; if (l)
+                                f.path = d;
+                                if (l)
                                     for (e = l.length; e--;) l[e].path = l[e].cutOff ? this.cutOffPath(d, l[e].cutOff) : d;
-                                m = !0 } else if (c === "visibility") { if (l)
+                                m = !0
+                            } else if (c === "visibility") {
+                                if (l)
                                     for (e = l.length; e--;) l[e].style[c] = d;
                                 h === "DIV" && (d = d === "hidden" ? "-999em" : 0, c = "top");
                                 g[c] = d;
-                                m = !0 } else if (c === "zIndex") d && (g[c] = d), m = !0;
+                                m = !0
+                            } else if (c === "zIndex") d && (g[c] = d), m = !0;
                             else if (c === "width" || c === "height") d = y(0, d), this[c] = d, this.updateClipping ? (this[c] = d, this.updateClipping()) :
                                 g[c] = d, m = !0;
                             else if (c === "x" || c === "y") this[c] = d, g[{ x: "left", y: "top" }[c]] = d;
@@ -1160,9 +1345,14 @@
             safeRemoveChild: function(a) { a.parentNode && Na(a) },
             destroy: function() { this.destroyClip && this.destroyClip(); return va.prototype.destroy.apply(this) },
             empty: function() { for (var a = this.element.childNodes, b = a.length, c; b--;) c = a[b], c.parentNode.removeChild(c) },
-            on: function(a, b) { this.element["on" + a] = function() { var a = K.event;
+            on: function(a, b) {
+                this.element["on" + a] = function() {
+                    var a = K.event;
                     a.target = a.srcElement;
-                    b(a) }; return this },
+                    b(a)
+                };
+                return this
+            },
             cutOffPath: function(a, b) {
                 var c, a = a.split(/[ ,]/);
                 c = a.length;
@@ -1262,9 +1452,11 @@
                     s = a[a.length - 1];
                     p[0] > 0 && a.unshift([0, p[1]]);
                     s[0] < 1 && a.push([1, s[1]]);
-                    n(a, function(a, b) { g.test(a[1]) ? (f = qa(a[1]), k = f.get("rgb"), l = f.get("a")) : (k = a[1], l = 1);
+                    n(a, function(a, b) {
+                        g.test(a[1]) ? (f = qa(a[1]), k = f.get("rgb"), l = f.get("a")) : (k = a[1], l = 1);
                         v.push(a[0] * 100 + "% " + k);
-                        b ? (o = l, q = k) : (u = l, D = k) });
+                        b ? (o = l, q = k) : (u = l, D = k)
+                    });
                     if (c === "fill")
                         if (i === "gradient") c = m.x1 || m[0] || 0, a = m.y1 || m[1] || 0, p = m.x2 || m[2] || 0, m = m.y2 || m[3] || 0, t = 'angle="' + (90 - J.atan((m - a) / (p - c)) * 180 / xa) + '"', F();
                         else {
@@ -1285,8 +1477,11 @@
                         }
                     else j = k
                 } else if (g.test(a) && b.tagName !== "IMG") f = qa(a), h = ["<", c, ' opacity="', f.get("a"), '"/>'], Q(this.prepVML(h), null, null, b), j = f.get("rgb");
-                else { j = b.getElementsByTagName(c); if (j.length) j[0].opacity = 1;
-                    j = a }
+                else {
+                    j = b.getElementsByTagName(c);
+                    if (j.length) j[0].opacity = 1;
+                    j = a
+                }
                 return j
             },
             prepVML: function(a) {
@@ -1297,22 +1492,35 @@
                 return a
             },
             text: ra.prototype.html,
-            path: function(a) { var b = { coordsize: "10 10" };
-                Ha(a) ? b.d = a : X(a) && r(b, a); return this.createElement("shape").attr(b) },
+            path: function(a) {
+                var b = { coordsize: "10 10" };
+                Ha(a) ? b.d = a : X(a) && r(b, a);
+                return this.createElement("shape").attr(b)
+            },
             circle: function(a, b, c) { return this.symbol("circle").attr({ x: a - c, y: b - c, width: 2 * c, height: 2 * c }) },
             g: function(a) {
                 var b;
                 a && (b = { className: "highcharts-" + a, "class": "highcharts-" + a });
                 return this.createElement(ia).attr(b)
             },
-            image: function(a, b, c, d, e) { var f = this.createElement("img").attr({ src: a });
-                arguments.length > 1 && f.attr({ x: b, y: c, width: d, height: e }); return f },
-            rect: function(a, b, c, d, e, f) { if (X(a)) b = a.y, c = a.width, d = a.height, f = a.strokeWidth, a = a.x; var g = this.symbol("rect");
-                g.r = e; return g.attr(g.crisp(f, a, b, y(c, 0), y(d, 0))) },
-            invertChild: function(a, b) { var c = b.style;
-                H(a, { flip: "x", left: w(c.width) - 1, top: w(c.height) - 1, rotation: -90 }) },
+            image: function(a, b, c, d, e) {
+                var f = this.createElement("img").attr({ src: a });
+                arguments.length > 1 && f.attr({ x: b, y: c, width: d, height: e });
+                return f
+            },
+            rect: function(a, b, c, d, e, f) {
+                if (X(a)) b = a.y, c = a.width, d = a.height, f = a.strokeWidth, a = a.x;
+                var g = this.symbol("rect");
+                g.r = e;
+                return g.attr(g.crisp(f, a, b, y(c, 0), y(d, 0)))
+            },
+            invertChild: function(a, b) {
+                var c = b.style;
+                H(a, { flip: "x", left: w(c.width) - 1, top: w(c.height) - 1, rotation: -90 })
+            },
             symbols: {
-                arc: function(a, b, c, d, e) { var f = e.start,
+                arc: function(a, b, c, d, e) {
+                    var f = e.start,
                         g = e.end,
                         h = e.r || c || d,
                         c = V(f),
@@ -1321,11 +1529,14 @@
                         j = Y(g),
                         k = e.innerR,
                         l = 0.08 / h,
-                        m = k && 0.1 / k || 0; if (g - f === 0) return ["x"];
+                        m = k && 0.1 / k || 0;
+                    if (g - f === 0) return ["x"];
                     else 2 * xa - g + f < l ? i = -l : g - f < m && (i = V(f + m));
                     f = ["wa", a - h, b - h, a + h, b + h, a + h * c, b + h * d, a + h * i, b + h * j];
                     e.open && !k && f.push("e", "M", a, b);
-                    f.push("at", a - k, b - k, a + k, b + k, a + k * i, b + k * j, a + k * c, b + k * d, "x", "e"); return f },
+                    f.push("at", a - k, b - k, a + k, b + k, a + k * i, b + k * j, a + k * c, b + k * d, "x", "e");
+                    return f
+                },
                 circle: function(a, b, c, d) { return ["wa", a, b, a + c, b + d, a + c, b + d / 2, a + c, b + d / 2, "e"] },
                 rect: function(a, b, c, d, e) {
                     var f = a + c,
@@ -1343,14 +1554,19 @@
     }
     var gb, Mb;
     if (U) gb = function() { pa = "http://www.w3.org/1999/xhtml" }, gb.prototype.symbols = {}, Mb = function() {
-        function a() { var a = b.length,
-                d; for (d = 0; d < a; d++) b[d]();
-            b = [] }
+        function a() {
+            var a = b.length,
+                d;
+            for (d = 0; d < a; d++) b[d]();
+            b = []
+        }
         var b = [];
         return {
             push: function(c,
-                d) { b.length === 0 && Qb(d, a);
-                b.push(c) }
+                d) {
+                b.length === 0 && Qb(d, a);
+                b.push(c)
+            }
         }
     }();
     Ra = ja || gb || ra;
@@ -1385,32 +1601,44 @@
             f = d && { width: y(1, s(d - 2 * (g.padding || 10))) + "px" };
             f = r(f, g.style);
             if (t(e)) e && e.attr({ text: b }).css(f);
-            else { d = { align: g.align }; if (Aa(g.rotation)) d.rotation = g.rotation;
-                this.label = t(b) && g.enabled ? c.renderer.text(b, 0, 0, g.useHTML).attr(d).css(f).add(a.labelGroup) : null }
+            else {
+                d = { align: g.align };
+                if (Aa(g.rotation)) d.rotation = g.rotation;
+                this.label = t(b) && g.enabled ? c.renderer.text(b, 0, 0, g.useHTML).attr(d).css(f).add(a.labelGroup) : null
+            }
         },
-        getLabelSize: function() { var a = this.label,
-                b = this.axis; return a ? (this.labelBBox = a.getBBox())[b.horiz ? "height" : "width"] : 0 },
+        getLabelSize: function() {
+            var a = this.label,
+                b = this.axis;
+            return a ? (this.labelBBox = a.getBBox())[b.horiz ? "height" : "width"] : 0
+        },
         getLabelSides: function() {
             var a = this.axis.options.labels,
                 b = this.labelBBox.width,
                 a = b * { left: 0, center: 0.5, right: 1 }[a.align] - a.x;
             return [-a, b - a]
         },
-        handleOverflow: function(a, b) { var c = !0,
+        handleOverflow: function(a, b) {
+            var c = !0,
                 d = this.axis,
                 e = d.chart,
                 f = this.isFirst,
                 g = this.isLast,
                 h = b.x,
                 i = d.reversed,
-                j = d.tickPositions; if (f || g) { var k = this.getLabelSides(),
+                j = d.tickPositions;
+            if (f || g) {
+                var k = this.getLabelSides(),
                     l = k[0],
                     k = k[1],
                     e = e.plotLeft,
                     m = e + d.len,
                     j = (d = d.ticks[j[a + (f ? 1 : -1)]]) && d.label.xy && d.label.xy.x + d.getLabelSides()[f ? 0 : 1];
                 f && !i || g && i ? h + l < e && (h = e - l, d && h + k > j && (c = !1)) : h + k > m && (h = m - k, d && h + l < j && (c = !1));
-                b.x = h } return c },
+                b.x = h
+            }
+            return c
+        },
         getPosition: function(a, b, c, d) {
             var e = this.axis,
                 f = e.chart,
@@ -1458,8 +1686,16 @@
                 r.x,
                 r = r.y,
                 y = c.staggerLines;
-            if (p) { i = c.getPlotLinePath(i + F, p, b); if (k === x) { k = { stroke: u, "stroke-width": p }; if (n) k.dashstyle = n; if (!g) k.zIndex = 1;
-                    this.gridLine = k = p ? e.path(i).attr(k).add(c.gridGroup) : null } if (!b && k && i) k[this.isNew ? "attr" : "animate"]({ d: i }) }
+            if (p) {
+                i = c.getPlotLinePath(i + F, p, b);
+                if (k === x) {
+                    k = { stroke: u, "stroke-width": p };
+                    if (n) k.dashstyle = n;
+                    if (!g) k.zIndex = 1;
+                    this.gridLine = k = p ? e.path(i).attr(k).add(c.gridGroup) : null
+                }
+                if (!b && k && i) k[this.isNew ? "attr" : "animate"]({ d: i })
+            }
             if (l && q) t === "inside" && (q = -q), c.opposite && (q = -q), g = this.getMarkPath(P, r, q, l, f, e), m ? m.animate({ d: g }) : this.mark = e.path(g).attr({ stroke: D, "stroke-width": l }).add(c.axisGroup);
             if (h && !isNaN(P)) h.xy = r = this.getLabelPosition(P, r, h, f, j, F, a, s), this.isFirst && !o(d.showFirstLabel,
                 1) || this.isLast && !o(d.showLastLabel, 1) ? v = !1 : !y && f && j.overflow === "justify" && !this.handleOverflow(a, r) && (v = !1), s && a % s && (v = !1), v ? (h[this.isNew ? "attr" : "animate"](r), h.show(), this.isNew = !1) : h.hide()
@@ -1495,23 +1731,30 @@
             else if (u && u.length && (a.svgElem = p = r.path(u).attr(d).add(), s))
                 for (n in e = function(b) { p.on(b, function(c) { s[b].apply(a, [c]) }) }, s) e(n);
             if (f &&
-                t(f.text) && u && u.length && b.width > 0 && b.height > 0) { f = A({ align: c && k && "center", x: c ? !k && 4 : 10, verticalAlign: !c && k && "middle", y: c ? k ? 16 : 10 : k ? 6 : -4, rotation: c && !k && 90 }, f); if (!g) a.label = g = r.text(f.text, 0, 0).attr({ align: f.textAlign || f.align, rotation: f.rotation, zIndex: D }).css(f.style).add();
+                t(f.text) && u && u.length && b.width > 0 && b.height > 0) {
+                f = A({ align: c && k && "center", x: c ? !k && 4 : 10, verticalAlign: !c && k && "middle", y: c ? k ? 16 : 10 : k ? 6 : -4, rotation: c && !k && 90 }, f);
+                if (!g) a.label = g = r.text(f.text, 0, 0).attr({ align: f.textAlign || f.align, rotation: f.rotation, zIndex: D }).css(f.style).add();
                 b = [u[1], u[4], o(u[6], u[1])];
                 u = [u[2], u[5], o(u[7], u[2])];
                 c = Ma(b);
                 k = Ma(u);
                 g.align(f, !1, { x: c, y: k, width: Da(b) - c, height: Da(u) - k });
-                g.show() } else g && g.hide();
+                g.show()
+            } else g && g.hide();
             return a
         },
-        destroy: function() { Ba(this.axis.plotLinesAndBands, this);
-            Ea(this, this.axis) }
+        destroy: function() {
+            Ba(this.axis.plotLinesAndBands, this);
+            Ea(this, this.axis)
+        }
     };
     Hb.prototype = {
         destroy: function() { Ea(this, this.axis) },
         setTotal: function(a) { this.cum = this.total = a },
-        render: function(a) { var b = this.options.formatter.call(this);
-            this.label ? this.label.attr({ text: b, visibility: "hidden" }) : this.label = this.axis.chart.renderer.text(b, 0, 0).css(this.options.style).attr({ align: this.textAlign, rotation: this.options.rotation, visibility: "hidden" }).add(a) },
+        render: function(a) {
+            var b = this.options.formatter.call(this);
+            this.label ? this.label.attr({ text: b, visibility: "hidden" }) : this.label = this.axis.chart.renderer.text(b, 0, 0).css(this.options.style).attr({ align: this.textAlign, rotation: this.options.rotation, visibility: "hidden" }).add(a)
+        },
         setOffset: function(a, b) {
             var c = this.axis,
                 d = c.chart,
@@ -1678,15 +1921,19 @@
                 }
             })
         },
-        translate: function(a, b, c, d, e, f) { var g = this.len,
+        translate: function(a, b, c, d, e, f) {
+            var g = this.len,
                 h = 1,
                 i = 0,
                 j = d ? this.oldTransA : this.transA,
                 d = d ? this.oldMin : this.min,
-                e = this.options.ordinal || this.isLog && e; if (!j) j = this.transA;
+                e = this.options.ordinal || this.isLog && e;
+            if (!j) j = this.transA;
             c && (h *= -1, i = g);
             this.reversed && (h *= -1, i -= h * g);
-            b ? (this.reversed && (a = g - a), a = a / j + d, e && (a = this.lin2val(a))) : (e && (a = this.val2lin(a)), a = h * (a - d) * j + i + h * this.minPixelPadding + (f ? j * this.pointRange / 2 : 0)); return a },
+            b ? (this.reversed && (a = g - a), a = a / j + d, e && (a = this.lin2val(a))) : (e && (a = this.val2lin(a)), a = h * (a - d) * j + i + h * this.minPixelPadding + (f ? j * this.pointRange / 2 : 0));
+            return a
+        },
         getPlotLinePath: function(a, b, c) {
             var d = this.chart,
                 e = this.left,
@@ -1703,14 +1950,20 @@
             else if (this.horiz) { if (g = f, i = j - this.bottom, c < e || c > e + this.width) l = !0 } else if (c = e, h = k - this.right, g < f || g > f + this.height) l = !0;
             return l ? null : d.renderer.crispLine(["M", c, g, "L", h, i], b || 0)
         },
-        getPlotBandPath: function(a, b) { var c = this.getPlotLinePath(b),
+        getPlotBandPath: function(a, b) {
+            var c = this.getPlotLinePath(b),
                 d = this.getPlotLinePath(a);
-            d && c ? d.push(c[4], c[5], c[1], c[2]) : d = null; return d },
+            d && c ? d.push(c[4], c[5], c[1], c[2]) : d = null;
+            return d
+        },
         getLinearTickPositions: function(a, b, c) {
             for (var d,
-                    b = ea(T(b / a) * a), c = ea(wa(c / a) * a), e = []; b <= c;) { e.push(b);
-                b = ea(b + a); if (b === d) break;
-                d = b }
+                    b = ea(T(b / a) * a), c = ea(wa(c / a) * a), e = []; b <= c;) {
+                e.push(b);
+                b = ea(b + a);
+                if (b === d) break;
+                d = b
+            }
             return e
         },
         getLogTickPositions: function(a, b, c, d) {
@@ -1741,8 +1994,11 @@
                 c = this.max,
                 d, e = this.dataMax - this.dataMin >= this.minRange,
                 f, g, h, i, j;
-            if (this.isXAxis && this.minRange === x && !this.isLog) t(a.min) || t(a.max) ? this.minRange = null : (n(this.series, function(a) { i = a.xData; for (g = j = a.xIncrement ? 1 : i.length - 1; g > 0; g--)
-                    if (h = i[g] - i[g - 1], f === x || h < f) f = h }), this.minRange = O(f * 5, this.dataMax - this.dataMin));
+            if (this.isXAxis && this.minRange === x && !this.isLog) t(a.min) || t(a.max) ? this.minRange = null : (n(this.series, function(a) {
+                i = a.xData;
+                for (g = j = a.xIncrement ? 1 : i.length - 1; g > 0; g--)
+                    if (h = i[g] - i[g - 1], f === x || h < f) f = h
+            }), this.minRange = O(f * 5, this.dataMax - this.dataMin));
             if (c - b < this.minRange) {
                 var k = this.minRange;
                 d = (k - c + b) / 2;
@@ -1764,12 +2020,15 @@
                 e = 0,
                 f = this.linkedParent,
                 g = this.transA;
-            if (this.isXAxis) f ? (d = f.minPointOffset, e = f.pointRangePadding) : n(this.series, function(a) { var f = a.pointRange,
+            if (this.isXAxis) f ? (d = f.minPointOffset, e = f.pointRangePadding) : n(this.series, function(a) {
+                    var f = a.pointRange,
                         g = a.options.pointPlacement,
                         k = a.closestPointRange;
                     b = y(b, f);
                     d = y(d, g ? 0 : f / 2);
-                    e = y(e, g === "on" ? 0 : f);!a.noSharedTooltip && t(k) && (c = t(c) ? O(c, k) : k) }), this.minPointOffset = d, this.pointRangePadding =
+                    e = y(e, g === "on" ? 0 : f);
+                    !a.noSharedTooltip && t(k) && (c = t(c) ? O(c, k) : k)
+                }), this.minPointOffset = d, this.pointRangePadding =
                 e, this.pointRange = b, this.closestPointRange = c;
             this.oldTransA = g;
             this.translationSlope = this.transA = g = this.len / (a + e || 1);
@@ -1815,22 +2074,31 @@
                 b.min, b.max), b.tickPositions = i;
             if (!h) e = i[0], f = i[i.length - 1], h = b.minPointOffset || 0, d.startOnTick ? b.min = e : b.min - h > e && i.shift(), d.endOnTick ? b.max = f : b.max + h < f && i.pop()
         },
-        setMaxTicks: function() { var a = this.chart,
+        setMaxTicks: function() {
+            var a = this.chart,
                 b = a.maxTicks,
                 c = this.tickPositions,
                 d = this.xOrY;
-            b || (b = { x: 0, y: 0 }); if (!this.isLinked && !this.isDatetimeAxis && c.length > b[d] && this.options.alignTicks !== !1) b[d] = c.length;
-            a.maxTicks = b },
+            b || (b = { x: 0, y: 0 });
+            if (!this.isLinked && !this.isDatetimeAxis && c.length > b[d] && this.options.alignTicks !== !1) b[d] = c.length;
+            a.maxTicks = b
+        },
         adjustTickAmount: function() {
             var a = this.xOrY,
                 b = this.tickPositions,
                 c = this.chart.maxTicks;
             if (c && c[a] && !this.isDatetimeAxis &&
-                !this.categories && !this.isLinked && this.options.alignTicks !== !1) { var d = this.tickAmount,
+                !this.categories && !this.isLinked && this.options.alignTicks !== !1) {
+                var d = this.tickAmount,
                     e = b.length;
-                this.tickAmount = a = c[a]; if (e < a) { for (; b.length < a;) b.push(ea(b[b.length - 1] + this.tickInterval));
+                this.tickAmount = a = c[a];
+                if (e < a) {
+                    for (; b.length < a;) b.push(ea(b[b.length - 1] + this.tickInterval));
                     this.transA *= (e - 1) / (a - 1);
-                    this.max = b[b.length - 1] } if (t(d) && a !== d) this.isDirty = !0 }
+                    this.max = b[b.length - 1]
+                }
+                if (t(d) && a !== d) this.isDirty = !0
+            }
         },
         setScale: function() {
             var a = this.stacks,
@@ -1864,7 +2132,8 @@
             })
         },
         zoom: function(a, b) { this.setExtremes(a, b, !1, x, { trigger: "zoom" }); return !0 },
-        setAxisSize: function() { var a = this.chart,
+        setAxisSize: function() {
+            var a = this.chart,
                 b = this.options,
                 c = b.offsetLeft || 0,
                 d = b.offsetRight || 0;
@@ -1874,18 +2143,25 @@
             this.height = o(b.height, a.plotHeight);
             this.bottom = a.chartHeight - this.height - this.top;
             this.right = a.chartWidth - this.width - this.left;
-            this.len = y(this.horiz ? this.width : this.height, 0) },
+            this.len = y(this.horiz ? this.width : this.height, 0)
+        },
         getExtremes: function() {
             var a =
                 this.isLog;
             return { min: a ? ea(ba(this.min)) : this.min, max: a ? ea(ba(this.max)) : this.max, dataMin: this.dataMin, dataMax: this.dataMax, userMin: this.userMin, userMax: this.userMax }
         },
-        getThreshold: function(a) { var b = this.isLog,
+        getThreshold: function(a) {
+            var b = this.isLog,
                 c = b ? ba(this.min) : this.min,
                 b = b ? ba(this.max) : this.max;
-            c > a || a === null ? a = c : b < a && (a = b); return this.translate(a, 0, 1, 0, 1) },
-        addPlotBandOrLine: function(a) { a = (new nb(this, a)).render();
-            this.plotLinesAndBands.push(a); return a },
+            c > a || a === null ? a = c : b < a && (a = b);
+            return this.translate(a, 0, 1, 0, 1)
+        },
+        addPlotBandOrLine: function(a) {
+            a = (new nb(this, a)).render();
+            this.plotLinesAndBands.push(a);
+            return a
+        },
         getOffset: function() {
             var a = this,
                 b = a.chart,
@@ -1914,19 +2190,25 @@
             }), a.staggerLines && (u += (a.staggerLines - 1) * 16);
             else
                 for (D in f) f[D].destroy(), delete f[D];
-            if (m && m.text) { if (!a.axisTitle) a.axisTitle = c.text(m.text, 0, 0, m.useHTML).attr({ zIndex: 7, rotation: m.rotation || 0, align: m.textAlign || { low: "left", middle: "center", high: "right" }[m.align] }).css(m.style).add(a.axisGroup), a.axisTitle.isNew = !0; if (i) j = a.axisTitle.getBBox()[g ? "height" : "width"], l = o(m.margin, g ? 5 : 10), k = m.offset;
-                a.axisTitle[i ? "show" : "hide"]() }
+            if (m && m.text) {
+                if (!a.axisTitle) a.axisTitle = c.text(m.text, 0, 0, m.useHTML).attr({ zIndex: 7, rotation: m.rotation || 0, align: m.textAlign || { low: "left", middle: "center", high: "right" }[m.align] }).css(m.style).add(a.axisGroup), a.axisTitle.isNew = !0;
+                if (i) j = a.axisTitle.getBBox()[g ? "height" : "width"], l = o(m.margin, g ? 5 : 10), k = m.offset;
+                a.axisTitle[i ? "show" : "hide"]()
+            }
             a.offset = q * o(d.offset,
                 da[h]);
             a.axisTitleMargin = o(k, u + l + (h !== 2 && u && q * d.labels[g ? "y" : "x"]));
             da[h] = y(da[h], a.axisTitleMargin + j + q * a.offset)
         },
-        getLinePath: function(a) { var b = this.chart,
+        getLinePath: function(a) {
+            var b = this.chart,
                 c = this.opposite,
                 d = this.offset,
                 e = this.horiz,
                 f = this.left + (c ? this.width : 0) + d;
-            this.lineTop = c = b.chartHeight - this.bottom - (c ? this.height : 0) + d; return b.renderer.crispLine(["M", e ? this.left : f, e ? c : this.top, "L", e ? b.chartWidth - this.right : f, e ? c : b.chartHeight - this.bottom], a) },
+            this.lineTop = c = b.chartHeight - this.bottom - (c ? this.height : 0) + d;
+            return b.renderer.crispLine(["M", e ? this.left : f, e ? c : this.top, "L", e ? b.chartWidth - this.right : f, e ? c : b.chartHeight - this.bottom], a)
+        },
         getTitlePosition: function() {
             var a = this.horiz,
                 b = this.left,
@@ -1962,10 +2244,12 @@
                 r = a.showAxis,
                 s, v;
             if (a.hasData || f)
-                if (a.minorTickInterval && !a.categories && n(a.getMinorTickPositions(), function(b) { k[b] || (k[b] = new Pa(a, b, "minor"));
+                if (a.minorTickInterval && !a.categories && n(a.getMinorTickPositions(), function(b) {
+                        k[b] || (k[b] = new Pa(a, b, "minor"));
                         D && k[b].isNew && k[b].render(null, !0);
                         k[b].isActive = !0;
-                        k[b].render() }), n(g.slice(1).concat([g[0]]), function(b, c) { c = c === g.length - 1 ? 0 : c + 1; if (!f || b >= a.min && b <= a.max) j[b] || (j[b] = new Pa(a, b)), D && j[b].isNew && j[b].render(c, !0), j[b].isActive = !0, j[b].render(c) }), p && n(g, function(b, c) {
+                        k[b].render()
+                    }), n(g.slice(1).concat([g[0]]), function(b, c) { c = c === g.length - 1 ? 0 : c + 1; if (!f || b >= a.min && b <= a.max) j[b] || (j[b] = new Pa(a, b)), D && j[b].isNew && j[b].render(c, !0), j[b].isActive = !0, j[b].render(c) }), p && n(g, function(b, c) {
                         if (c % 2 === 0 && b < a.max) l[b] ||
                             (l[b] = new nb(a)), s = b + u, v = g[c + 1] !== x ? g[c + 1] + u : a.max, l[b].options = { from: e ? ba(s) : s, to: e ? ba(v) : v, color: p }, l[b].render(), l[b].isActive = !0
                     }), !a._addedPlotLB) n((d.plotLines || []).concat(d.plotBands || []), function(b) { a.addPlotBandOrLine(b) }), a._addedPlotLB = !0;
@@ -1973,9 +2257,13 @@
             if (o) q = a.getLinePath(o), a.axisLine ? a.axisLine.animate({ d: q }) : a.axisLine = c.path(q).attr({ stroke: d.lineColor, "stroke-width": o, zIndex: 7 }).add(a.axisGroup),
                 a.axisLine[r ? "show" : "hide"]();
             if (h && r) h[h.isNew ? "attr" : "animate"](a.getTitlePosition()), h.isNew = !1;
-            if (m && m.enabled) { var F, w, d = a.stackTotalGroup; if (!d) a.stackTotalGroup = d = c.g("stack-labels").attr({ visibility: "visible", zIndex: 6 }).add();
-                d.translate(b.plotLeft, b.plotTop); for (F in i)
-                    for (w in b = i[F], b) b[w].render(d) }
+            if (m && m.enabled) {
+                var F, w, d = a.stackTotalGroup;
+                if (!d) a.stackTotalGroup = d = c.g("stack-labels").attr({ visibility: "visible", zIndex: 6 }).add();
+                d.translate(b.plotLeft, b.plotTop);
+                for (F in i)
+                    for (w in b = i[F], b) b[w].render(d)
+            }
             a.isDirty = !1
         },
         removePlotBandOrLine: function(a) { for (var b = this.plotLinesAndBands, c = b.length; c--;) b[c].id === a && b[c].destroy() },
@@ -1988,17 +2276,23 @@
             this.isDirty = !0;
             o(b, !0) && c.redraw()
         },
-        redraw: function() { var a = this.chart;
+        redraw: function() {
+            var a = this.chart;
             a.tracker.resetTracker && a.tracker.resetTracker(!0);
             this.render();
             n(this.plotLinesAndBands, function(a) { a.render() });
-            n(this.series, function(a) { a.isDirty = !0 }) },
-        setCategories: function(a, b) { var c = this.chart;
+            n(this.series, function(a) { a.isDirty = !0 })
+        },
+        setCategories: function(a, b) {
+            var c = this.chart;
             this.categories = this.userOptions.categories = a;
-            n(this.series, function(a) { a.translate();
-                a.setTooltipPoints(!0) });
+            n(this.series, function(a) {
+                a.translate();
+                a.setTooltipPoints(!0)
+            });
             this.isDirty = !0;
-            o(b, !0) && c.redraw() },
+            o(b, !0) && c.redraw()
+        },
         destroy: function() {
             var a = this,
                 b = a.stacks,
@@ -2024,11 +2318,15 @@
             e.label.attr(f);
             if (g && (L(a - f.x) > 1 || L(b - f.y) > 1)) clearTimeout(this.tooltipTimeout), this.tooltipTimeout = setTimeout(function() { e && e.move(a, b, c, d) }, 32)
         },
-        hide: function() { if (!this.isHidden) { var a = this.chart.hoverPoints;
+        hide: function() {
+            if (!this.isHidden) {
+                var a = this.chart.hoverPoints;
                 this.label.hide();
                 a && n(a, function(a) { a.setState() });
                 this.chart.hoverPoints = null;
-                this.isHidden = !0 } },
+                this.isHidden = !0
+            }
+        },
         hideCrosshairs: function() { n(this.crosshairs, function(a) { a && a.hide() }) },
         getAnchor: function(a, b) {
             var c, d = this.chart,
@@ -2038,9 +2336,11 @@
                 g = 0,
                 h, a = na(a);
             c = a[0].tooltipPos;
-            c || (n(a, function(a) { h = a.series.yAxis;
+            c || (n(a, function(a) {
+                h = a.series.yAxis;
                 f += a.plotX;
-                g += (a.plotLow ? (a.plotLow + a.plotHigh) / 2 : a.plotY) + (!e && h ? h.top - d.plotTop : 0) }), f /= a.length, g /= a.length, c = [e ? d.plotWidth - g : f, this.shared && !e && a.length > 1 && b ? b.chartY - d.plotTop : e ? d.plotHeight - f : g]);
+                g += (a.plotLow ? (a.plotLow + a.plotHigh) / 2 : a.plotY) + (!e && h ? h.top - d.plotTop : 0)
+            }), f /= a.length, g /= a.length, c = [e ? d.plotWidth - g : f, this.shared && !e && a.length > 1 && b ? b.chartY - d.plotTop : e ? d.plotHeight - f : g]);
             return Sa(c, s)
         },
         getPosition: function(a, b, c) {
@@ -2063,13 +2363,18 @@
             return { x: d, y: k }
         },
         refresh: function(a, b) {
-            function c() { var a = this.points || na(this),
+            function c() {
+                var a = this.points || na(this),
                     b = a[0].series,
                     c;
                 c = [b.tooltipHeaderFormatter(a[0].key)];
-                n(a, function(a) { b = a.series;
-                    c.push(b.tooltipFormatter && b.tooltipFormatter(a) || a.point.tooltipFormatter(b.tooltipOptions.pointFormat)) });
-                c.push(f.footerFormat || ""); return c.join("") }
+                n(a, function(a) {
+                    b = a.series;
+                    c.push(b.tooltipFormatter && b.tooltipFormatter(a) || a.point.tooltipFormatter(b.tooltipOptions.pointFormat))
+                });
+                c.push(f.footerFormat || "");
+                return c.join("")
+            }
             var d = this.chart,
                 e = this.label,
                 f = this.options,
@@ -2083,8 +2388,10 @@
             h = this.getAnchor(a, b);
             g = h[0];
             h = h[1];
-            i && (!a.series || !a.series.noSharedTooltip) ? (d.hoverPoints = a, j && n(j, function(a) { a.setState() }), n(a, function(a) { a.setState("hover");
-                l.push(a.getLabelConfig()) }), j = { x: a[0].category, y: a[0].y }, j.points = l, a = a[0]) : j = a.getLabelConfig();
+            i && (!a.series || !a.series.noSharedTooltip) ? (d.hoverPoints = a, j && n(j, function(a) { a.setState() }), n(a, function(a) {
+                a.setState("hover");
+                l.push(a.getLabelConfig())
+            }), j = { x: a[0].category, y: a[0].y }, j.points = l, a = a[0]) : j = a.getLabelConfig();
             k = k.call(j);
             j = a.series;
             i = i || !j.isCartesian || j.tooltipOutsidePlot || d.isInsidePlot(g, h);
@@ -2106,11 +2413,15 @@
         }
     };
     qb.prototype = {
-        normalizeMouseEvent: function(a) { var b, c, d, a = a || K.event; if (!a.target) a.target = a.srcElement;
+        normalizeMouseEvent: function(a) {
+            var b, c, d, a = a || K.event;
+            if (!a.target) a.target = a.srcElement;
             a = Lb(a);
             d = a.touches ? a.touches.item(0) : a;
             this.chartPosition = b = Sb(this.chart.container);
-            d.pageX === x ? (c = a.x, b = a.y) : (c = d.pageX - b.left, b = d.pageY - b.top); return r(a, { chartX: s(c), chartY: s(b) }) },
+            d.pageX === x ? (c = a.x, b = a.y) : (c = d.pageX - b.left, b = d.pageY - b.top);
+            return r(a, { chartX: s(c), chartY: s(b) })
+        },
         getMouseCoordinates: function(a) {
             var b = { xAxis: [], yAxis: [] },
                 c = this.chart;
@@ -2149,9 +2460,12 @@
             (a = a && e && b) &&
             na(b)[0].plotX === x && (a = !1);
             if (a) e.refresh(b);
-            else { if (d) d.onMouseOut(); if (c) c.onMouseOut();
+            else {
+                if (d) d.onMouseOut();
+                if (c) c.onMouseOut();
                 e && (e.hide(), e.hideCrosshairs());
-                this.hoverX = null }
+                this.hoverX = null
+            }
         },
         setDOMEvents: function() {
             function a() {
@@ -2186,14 +2500,19 @@
                 b.chartPosition && c.hoverSeries && c.hoverSeries.isCartesian &&
                     !c.isInsidePlot(a.pageX - b.chartPosition.left - c.plotLeft, a.pageY - b.chartPosition.top - c.plotTop) && b.resetTracker()
             };
-            b.hideTooltipOnMouseLeave = function() { b.resetTracker();
-                b.chartPosition = null };
-            d.onmousedown = function(d) { d = b.normalizeMouseEvent(d);!fa && d.preventDefault && d.preventDefault();
+            b.hideTooltipOnMouseLeave = function() {
+                b.resetTracker();
+                b.chartPosition = null
+            };
+            d.onmousedown = function(d) {
+                d = b.normalizeMouseEvent(d);
+                !fa && d.preventDefault && d.preventDefault();
                 c.mouseIsDown = !0;
                 c.cancelClick = !1;
                 c.mouseDownX = b.mouseDownX = d.chartX;
                 b.mouseDownY = d.chartY;
-                I(C, fa ? "touchend" : "mouseup", a) };
+                I(C, fa ? "touchend" : "mouseup", a)
+            };
             var h = function(a) {
                 if (!a || !(a.touches && a.touches.length > 1)) {
                     a = b.normalizeMouseEvent(a);
@@ -2207,8 +2526,10 @@
                         var m = c.isInsidePlot(b.mouseDownX -
                             c.plotLeft, b.mouseDownY - c.plotTop);
                         if (c.hasCartesianSeries && (b.zoomX || b.zoomY) && m && !b.selectionMarker) b.selectionMarker = c.renderer.rect(c.plotLeft, c.plotTop, f ? 1 : c.plotWidth, g ? 1 : c.plotHeight, 0).attr({ fill: b.options.chart.selectionMarkerFill || "rgba(69,114,167,0.25)", zIndex: 7 }).add();
-                        if (b.selectionMarker && f) { var p = d - b.mouseDownX;
-                            b.selectionMarker.attr({ width: L(p), x: (p > 0 ? 0 : p) + b.mouseDownX }) }
+                        if (b.selectionMarker && f) {
+                            var p = d - b.mouseDownX;
+                            b.selectionMarker.attr({ width: L(p), x: (p > 0 ? 0 : p) + b.mouseDownX })
+                        }
                         b.selectionMarker && g && (h -= b.mouseDownY, b.selectionMarker.attr({ height: L(h), y: (h > 0 ? 0 : h) + b.mouseDownY }));
                         m && !b.selectionMarker &&
                             b.options.chart.panning && c.pan(d)
@@ -2220,8 +2541,10 @@
             d.onmousemove = h;
             I(d, "mouseleave", b.hideTooltipOnMouseLeave);
             I(C, "mousemove", b.hideTooltipOnMouseMove);
-            d.ontouchstart = function(a) { if (b.zoomX || b.zoomY) d.onmousedown(a);
-                h(a) };
+            d.ontouchstart = function(a) {
+                if (b.zoomX || b.zoomY) d.onmousedown(a);
+                h(a)
+            };
             d.ontouchmove = h;
             d.ontouchend = function() { e && b.resetTracker() };
             d.onclick = function(a) {
@@ -2241,8 +2564,11 @@
             b.onclick = b.onmousedown = b.onmousemove = b.ontouchstart = b.ontouchend = b.ontouchmove = null;
             clearInterval(this.tooltipTimeout)
         },
-        init: function(a, b) { if (!a.trackerGroup) a.trackerGroup = a.renderer.g("tracker").attr({ zIndex: 9 }).add(); if (b.enabled) a.tooltip = new pb(a, b);
-            this.setDOMEvents() }
+        init: function(a, b) {
+            if (!a.trackerGroup) a.trackerGroup = a.renderer.g("tracker").attr({ zIndex: 9 }).add();
+            if (b.enabled) a.tooltip = new pb(a, b);
+            this.setDOMEvents()
+        }
     };
     rb.prototype = {
         init: function(a) {
@@ -2287,25 +2613,36 @@
                 f.attr(i)
             }
         },
-        positionItem: function(a) { var b = this.options,
+        positionItem: function(a) {
+            var b = this.options,
                 c = b.symbolPadding,
                 b = !b.rtl,
                 d = a._legendItemPos,
                 e = d[0],
                 d = d[1],
                 f = a.checkbox;
-            a.legendGroup && a.legendGroup.translate(b ? e : this.legendWidth - e - 2 * c - 4, d); if (f) f.x = e, f.y = d },
-        destroyItem: function(a) { var b = a.checkbox;
+            a.legendGroup && a.legendGroup.translate(b ? e : this.legendWidth - e - 2 * c - 4, d);
+            if (f) f.x = e, f.y = d
+        },
+        destroyItem: function(a) {
+            var b = a.checkbox;
             n(["legendItem", "legendLine", "legendSymbol", "legendGroup"], function(b) { a[b] && a[b].destroy() });
-            b && Na(a.checkbox) },
-        destroy: function() { var a = this.group,
-                b = this.box; if (b) this.box = b.destroy(); if (a) this.group = a.destroy() },
+            b && Na(a.checkbox)
+        },
+        destroy: function() {
+            var a = this.group,
+                b = this.box;
+            if (b) this.box = b.destroy();
+            if (a) this.group = a.destroy()
+        },
         positionCheckboxes: function() {
             var a =
                 this;
-            n(a.allItems, function(b) { var c = b.checkbox,
+            n(a.allItems, function(b) {
+                var c = b.checkbox,
                     d = a.group.alignAttr;
-                c && H(c, { left: d.translateX + b.legendItemWidth + c.x - 20 + "px", top: d.translateY + c.y + 3 + "px" }) })
+                c && H(c, { left: d.translateX + b.legendItemWidth + c.x - 20 + "px", top: d.translateY + c.y + 3 + "px" })
+            })
         },
         renderItem: function(a) {
             var u;
@@ -2329,11 +2666,17 @@
                 r = t.options,
                 s = r.showCheckbox;
             if (!q && (a.legendGroup = d.g("legend-item").attr({ zIndex: 1 }).add(b.scrollGroup),
-                    t.drawLegendSymbol(b, a), a.legendItem = q = d.text(e.labelFormatter.call(a), l ? g + h : -h, b.baseline, e.useHTML).css(A(a.visible ? i : j)).attr({ align: l ? "left" : "right", zIndex: 2 }).add(a.legendGroup), a.legendGroup.on("mouseover", function() { a.setState("hover");
-                        q.css(b.options.itemHoverStyle) }).on("mouseout", function() { q.css(a.visible ? i : j);
-                        a.setState() }).on("click", function(b) { var c = function() { a.setVisible() },
+                    t.drawLegendSymbol(b, a), a.legendItem = q = d.text(e.labelFormatter.call(a), l ? g + h : -h, b.baseline, e.useHTML).css(A(a.visible ? i : j)).attr({ align: l ? "left" : "right", zIndex: 2 }).add(a.legendGroup), a.legendGroup.on("mouseover", function() {
+                        a.setState("hover");
+                        q.css(b.options.itemHoverStyle)
+                    }).on("mouseout", function() {
+                        q.css(a.visible ? i : j);
+                        a.setState()
+                    }).on("click", function(b) {
+                        var c = function() { a.setVisible() },
                             b = { browserEvent: b };
-                        a.firePointEvent ? a.firePointEvent("legendItemClick", b, c) : E(a, "legendItemClick", b, c) }), b.colorizeItem(a,
+                        a.firePointEvent ? a.firePointEvent("legendItemClick", b, c) : E(a, "legendItemClick", b, c)
+                    }), b.colorizeItem(a,
                         a.visible), r && s)) a.checkbox = Q("input", { type: "checkbox", checked: a.selected, defaultChecked: a.selected }, e.itemCheckboxStyle, c.container), I(a.checkbox, "click", function(b) { E(a, "checkboxClick", { checked: b.target.checked }, function() { a.select() }) });
             d = q.getBBox();
             u = a.legendItemWidth = e.itemWidth || g + h + d.width + k + (s ? 20 : 0), e = u;
@@ -2364,8 +2707,10 @@
             if (!d) a.group = d = c.g("legend").attr({ zIndex: 7 }).add(), a.contentGroup = c.g().attr({ zIndex: 1 }).add(d), a.scrollGroup = c.g().add(a.contentGroup),
                 a.clipRect = c.clipRect(0, 0, 9999, b.chartHeight), a.contentGroup.clip(a.clipRect);
             e = [];
-            n(b.series, function(a) { var b = a.options;
-                b.showInLegend && (e = e.concat(a.legendItems || (b.legendType === "point" ? a.data : a))) });
+            n(b.series, function(a) {
+                var b = a.options;
+                b.showInLegend && (e = e.concat(a.legendItems || (b.legendType === "point" ? a.data : a)))
+            });
             Fb(e, function(a, b) { return (a.options && a.options.legendIndex || 0) - (b.options && b.options.legendIndex || 0) });
             j.reversed && e.reverse();
             a.allItems = e;
@@ -2435,22 +2780,32 @@
         }
     };
     sb.prototype = {
-        initSeries: function(a) { var b = this.options.chart,
+        initSeries: function(a) {
+            var b = this.options.chart,
                 b = new $[a.type || b.type || b.defaultSeriesType];
-            b.init(this, a); return b },
+            b.init(this, a);
+            return b
+        },
         addSeries: function(a, b, c) {
             var d, e = this;
             a && (ua(c, e), b = o(b, !0), E(e,
                 "addSeries", { options: a },
-                function() { d = e.initSeries(a);
+                function() {
+                    d = e.initSeries(a);
                     e.isDirtyLegend = !0;
-                    b && e.redraw() }));
+                    b && e.redraw()
+                }));
             return d
         },
-        isInsidePlot: function(a, b, c) { var d = c ? b : a,
-                a = c ? a : b; return d >= 0 && d <= this.plotWidth && a >= 0 && a <= this.plotHeight },
-        adjustTickAmounts: function() { this.options.chart.alignTicks !== !1 && n(this.axes, function(a) { a.adjustTickAmount() });
-            this.maxTicks = null },
+        isInsidePlot: function(a, b, c) {
+            var d = c ? b : a,
+                a = c ? a : b;
+            return d >= 0 && d <= this.plotWidth && a >= 0 && a <= this.plotHeight
+        },
+        adjustTickAmounts: function() {
+            this.options.chart.alignTicks !== !1 && n(this.axes, function(a) { a.adjustTickAmount() });
+            this.maxTicks = null
+        },
         redraw: function(a) {
             var b = this.axes,
                 c = this.series,
@@ -2507,10 +2862,12 @@
             this.loadingSpan.innerHTML = a || b.lang.loading;
             if (!this.loadingShown) H(c, { opacity: 0, display: "" }), xb(c, { opacity: d.style.opacity }, { duration: d.showDuration || 0 }), this.loadingShown = !0
         },
-        hideLoading: function() { var a = this.options,
+        hideLoading: function() {
+            var a = this.options,
                 b = this.loadingDiv;
             b && xb(b, { opacity: 0 }, { duration: a.loading.hideDuration || 100, complete: function() { H(b, { display: R }) } });
-            this.loadingShown = !1 },
+            this.loadingShown = !1
+        },
         get: function(a) {
             var b = this.axes,
                 c = this.series,
@@ -2519,22 +2876,29 @@
                 if (b[d].options.id === a) return b[d];
             for (d = 0; d < c.length; d++)
                 if (c[d].options.id === a) return c[d];
-            for (d = 0; d < c.length; d++) { e = c[d].points || []; for (b = 0; b < e.length; b++)
-                    if (e[b].id === a) return e[b] }
+            for (d = 0; d < c.length; d++) {
+                e = c[d].points || [];
+                for (b = 0; b < e.length; b++)
+                    if (e[b].id === a) return e[b]
+            }
             return null
         },
-        getAxes: function() { var a = this,
+        getAxes: function() {
+            var a = this,
                 b = this.options,
                 c = b.xAxis || {},
                 b = b.yAxis || {},
                 c = na(c);
-            n(c, function(a, b) { a.index = b;
-                a.isX = !0 });
+            n(c, function(a, b) {
+                a.index = b;
+                a.isX = !0
+            });
             b = na(b);
             n(b, function(a, b) { a.index = b });
             c = c.concat(b);
             n(c, function(b) { new ob(a, b) });
-            a.adjustTickAmounts() },
+            a.adjustTickAmounts()
+        },
         getSelectedPoints: function() {
             var a = [];
             n(this.series, function(b) { a = a.concat(Kb(b.points, function(a) { return a.selected })) });
@@ -2551,13 +2915,19 @@
             this.resetZoomButton = a.renderer.button(b.resetZoom, null, null, function() { a.zoomOut() }, d, e && e.hover).attr({ align: c.position.align, title: b.resetZoomTitle }).add().align(c.position, !1, a[f]);
             this.resetZoomButton.alignTo = f
         },
-        zoomOut: function() { var a = this,
+        zoomOut: function() {
+            var a = this,
                 b = a.resetZoomButton;
-            E(a, "selection", { resetSelection: !0 }, function() { a.zoom() }); if (b) a.resetZoomButton = b.destroy() },
-        zoom: function(a) { var b = this,
-                c;!a || a.resetSelection ? n(b.axes, function(a) { c = a.zoom() }) : n(a.xAxis.concat(a.yAxis), function(a) { var e = a.axis; if (b.tracker[e.isXAxis ? "zoomX" : "zoomY"]) c = e.zoom(a.min, a.max) });
+            E(a, "selection", { resetSelection: !0 }, function() { a.zoom() });
+            if (b) a.resetZoomButton = b.destroy()
+        },
+        zoom: function(a) {
+            var b = this,
+                c;
+            !a || a.resetSelection ? n(b.axes, function(a) { c = a.zoom() }) : n(a.xAxis.concat(a.yAxis), function(a) { var e = a.axis; if (b.tracker[e.isXAxis ? "zoomX" : "zoomY"]) c = e.zoom(a.min, a.max) });
             b.resetZoomButton || b.showResetZoom();
-            c && b.redraw(o(b.options.chart.animation, b.pointCount < 100)) },
+            c && b.redraw(o(b.options.chart.animation, b.pointCount < 100))
+        },
         pan: function(a) {
             var b = this.xAxis[0],
                 c = this.mouseDownX,
@@ -2598,9 +2968,11 @@
             this.chartHeight = a.height || (this.containerHeight > 19 ? this.containerHeight :
                 400)
         },
-        cloneRenderTo: function(a) { var b = this.renderToClone,
+        cloneRenderTo: function(a) {
+            var b = this.renderToClone,
                 c = this.container;
-            a ? b && (this.renderTo.appendChild(c), Na(b), delete this.renderToClone) : (c && this.renderTo.removeChild(c), this.renderToClone = b = this.renderTo.cloneNode(0), H(b, { position: "absolute", top: "-9999px", display: "block" }), C.body.appendChild(b), c && b.appendChild(c)) },
+            a ? b && (this.renderTo.appendChild(c), Na(b), delete this.renderToClone) : (c && this.renderTo.removeChild(c), this.renderToClone = b = this.renderTo.cloneNode(0), H(b, { position: "absolute", top: "-9999px", display: "block" }), C.body.appendChild(b), c && b.appendChild(c))
+        },
         getContainer: function() {
             var a, b = this.options.chart,
                 c, d, e;
@@ -2689,8 +3061,10 @@
             d.plotWidth = e - d.plotLeft - d.marginRight;
             d.plotHeight = f - d.plotTop - d.marginBottom;
             d.maxTicks = null;
-            n(d.axes, function(a) { a.isDirty = !0;
-                a.setScale() });
+            n(d.axes, function(a) {
+                a.isDirty = !0;
+                a.setScale()
+            });
             n(d.series, function(a) { a.isDirty = !0 });
             d.isDirtyLegend = !0;
             d.isDirtyBox = !0;
@@ -2724,10 +3098,13 @@
             this.spacingBox = { x: h, y: e, width: b - h - f, height: c - e - g };
             this.plotBox = { x: i, y: j, width: k, height: l };
             this.clipBox = { x: a / 2, y: a / 2, width: this.plotSizeX - a, height: this.plotSizeY - a };
-            n(this.axes, function(a) { a.setAxisSize();
-                a.setAxisTranslation() })
+            n(this.axes, function(a) {
+                a.setAxisSize();
+                a.setAxisTranslation()
+            })
         },
-        resetMargins: function() { var a = this.options.chart,
+        resetMargins: function() {
+            var a = this.options.chart,
                 b = a.spacingRight,
                 c = a.spacingBottom,
                 d = a.spacingLeft;
@@ -2735,7 +3112,8 @@
             this.marginRight = o(this.optionsMarginRight, b);
             this.marginBottom = o(this.optionsMarginBottom, c);
             this.plotLeft = o(this.optionsMarginLeft, d);
-            this.axisOffset = [0, 0, 0, 0] },
+            this.axisOffset = [0, 0, 0, 0]
+        },
         drawChartBox: function() {
             var a = this.options.chart,
                 b = this.renderer,
@@ -2761,8 +3139,11 @@
             p = i + (a.shadow ? 8 : 0);
             if (i || j)
                 if (e) e.animate(e.crisp(null, null, null, c - p, d - p));
-                else { e = { fill: j || R }; if (i) e.stroke = a.borderColor, e["stroke-width"] = i;
-                    this.chartBackground = b.rect(p / 2, p / 2, c - p, d - p, a.borderRadius, i).attr(e).add().shadow(a.shadow) }
+                else {
+                    e = { fill: j || R };
+                    if (i) e.stroke = a.borderColor, e["stroke-width"] = i;
+                    this.chartBackground = b.rect(p / 2, p / 2, c - p, d - p, a.borderRadius, i).attr(e).add().shadow(a.shadow)
+                }
             if (k) f ? f.animate(t) : this.plotBackground = b.rect(o, n, q, r, 0).attr({ fill: k }).add().shadow(a.plotShadow);
             if (l) h ? h.animate(t) : this.plotBGImage = b.image(l, o, n, q, r).add();
             s ? s.animate({ width: v.width, height: v.height }) : this.clipRect = b.clipRect(v);
@@ -2795,8 +3176,10 @@
             n(b, function(a) { a.setScale() });
             a.getMargins();
             a.maxTicks = null;
-            n(b, function(a) { a.setTickPositions(!0);
-                a.setMaxTicks() });
+            n(b, function(a) {
+                a.setTickPositions(!0);
+                a.setMaxTicks()
+            });
             a.adjustTickAmounts();
             a.getMargins();
             a.drawChartBox();
@@ -2807,12 +3190,14 @@
                 a.setTooltipPoints();
                 a.render()
             });
-            e.items && n(e.items, function(b) { var d = r(e.style, b.style),
+            e.items && n(e.items, function(b) {
+                var d = r(e.style, b.style),
                     f = w(d.left) + a.plotLeft,
                     j = w(d.top) + a.plotTop + 12;
                 delete d.left;
                 delete d.top;
-                c.text(b.html, f, j).attr({ zIndex: 2 }).css(d).add() });
+                c.text(b.html, f, j).attr({ zIndex: 2 }).css(d).add()
+            });
             if (d.enabled && !a.credits) f = d.href, a.credits = c.text(d.text, 0, 0).on("click", function() { if (f) location.href = f }).attr({ align: d.position.align, zIndex: 8 }).css(d.style).add().align(d.position);
             a.hasRendered = !0
         },
@@ -2826,8 +3211,10 @@
             S(a);
             for (e = b.length; e--;) b[e] = b[e].destroy();
             for (e = c.length; e--;) c[e] = c[e].destroy();
-            n("title,subtitle,chartBackground,plotBackground,plotBGImage,plotBorder,seriesGroup,clipRect,credits,tracker,scroller,rangeSelector,legend,resetZoomButton,tooltip,renderer".split(","), function(b) { var c = a[b];
-                c && c.destroy && (a[b] = c.destroy()) });
+            n("title,subtitle,chartBackground,plotBackground,plotBGImage,plotBorder,seriesGroup,clipRect,credits,tracker,scroller,rangeSelector,legend,resetZoomButton,tooltip,renderer".split(","), function(b) {
+                var c = a[b];
+                c && c.destroy && (a[b] = c.destroy())
+            });
             if (d) d.innerHTML = "", S(d), f && Na(d);
             for (e in a) delete a[e]
         },
@@ -2836,8 +3223,10 @@
                 b = a.options,
                 c = a.callback;
             if (!Z && K == K.top && C.readyState !== "complete" ||
-                U && !K.canvg) U ? Mb.push(function() { a.firstRender() }, b.global.canvasToolsURL) : C.attachEvent("onreadystatechange", function() { C.detachEvent("onreadystatechange", a.firstRender);
-                C.readyState === "complete" && a.firstRender() });
+                U && !K.canvg) U ? Mb.push(function() { a.firstRender() }, b.global.canvasToolsURL) : C.attachEvent("onreadystatechange", function() {
+                C.detachEvent("onreadystatechange", a.firstRender);
+                C.readyState === "complete" && a.firstRender()
+            });
             else {
                 a.getContainer();
                 E(a, "init");
@@ -2858,9 +3247,11 @@
                 E(a, "load")
             }
         },
-        init: function(a) { var b = this.options.chart,
+        init: function(a) {
+            var b = this.options.chart,
                 c;
-            b.reflow !== !1 && I(this, "load", this.initReflow); if (a)
+            b.reflow !== !1 && I(this, "load", this.initReflow);
+            if (a)
                 for (c in a) I(this, c, a[c]);
             this.xAxis = [];
             this.yAxis = [];
@@ -2868,16 +3259,21 @@
             this.setSize = this.resize;
             this.pointCount = 0;
             this.counters = new Eb;
-            this.firstRender() }
+            this.firstRender()
+        }
     };
     sb.prototype.callbacks = [];
     var Ta = function() {};
     Ta.prototype = {
-        init: function(a, b, c) { var d = a.chart.counters;
+        init: function(a, b, c) {
+            var d = a.chart.counters;
             this.series = a;
             this.applyOptions(b, c);
-            this.pointAttr = {}; if (a.options.colorByPoint) b = a.chart.options.colors, this.color = this.color || b[d.color++], d.wrapColor(b.length);
-            a.chart.pointCount++; return this },
+            this.pointAttr = {};
+            if (a.options.colorByPoint) b = a.chart.options.colors, this.color = this.color || b[d.color++], d.wrapColor(b.length);
+            a.chart.pointCount++;
+            return this
+        },
         applyOptions: function(a, b) {
             var c = this.series,
                 d = typeof a;
@@ -2893,11 +3289,17 @@
             } else if (typeof a[0] === "string") this.name = a[0], this.y = a[1];
             if (this.x === x) this.x = b === x ? c.autoIncrement() : b
         },
-        destroy: function() { var a = this.series.chart,
+        destroy: function() {
+            var a = this.series.chart,
                 b = a.hoverPoints,
                 c;
-            a.pointCount--; if (b && (this.setState(), Ba(b, this), !b.length)) a.hoverPoints = null; if (this === a.hoverPoint) this.onMouseOut(); if (this.graphic || this.dataLabel) S(this), this.destroyElements();
-            this.legendItem && a.legend.destroyItem(this); for (c in this) this[c] = null },
+            a.pointCount--;
+            if (b && (this.setState(), Ba(b, this), !b.length)) a.hoverPoints = null;
+            if (this === a.hoverPoint) this.onMouseOut();
+            if (this.graphic || this.dataLabel) S(this), this.destroyElements();
+            this.legendItem && a.legend.destroyItem(this);
+            for (c in this) this[c] = null
+        },
         destroyElements: function() {
             for (var a =
                     "graphic,tracker,dataLabel,group,connector,shadowGroup".split(","), b, c = 6; c--;) b = a[c], this[b] && (this[b] = this[b].destroy())
@@ -2916,16 +3318,22 @@
                 })
             })
         },
-        onMouseOver: function() { var a = this.series,
+        onMouseOver: function() {
+            var a = this.series,
                 b = a.chart,
                 c = b.tooltip,
-                d = b.hoverPoint; if (d && d !== this) d.onMouseOut();
+                d = b.hoverPoint;
+            if (d && d !== this) d.onMouseOut();
             this.firePointEvent("mouseOver");
             c && (!c.shared || a.noSharedTooltip) && c.refresh(this);
             this.setState("hover");
-            b.hoverPoint = this },
-        onMouseOut: function() { var a = this.series.chart,
-                b = a.hoverPoints; if (!b || Rb(this, b) === -1) this.firePointEvent("mouseOut"), this.setState(), a.hoverPoint = null },
+            b.hoverPoint = this
+        },
+        onMouseOut: function() {
+            var a = this.series.chart,
+                b = a.hoverPoints;
+            if (!b || Rb(this, b) === -1) this.firePointEvent("mouseOut"), this.setState(), a.hoverPoint = null
+        },
         tooltipFormatter: function(a) {
             var b = this.series,
                 c = b.tooltipOptions,
@@ -2938,21 +3346,29 @@
             for (i in d) g = d[i], la(g) && g !== a && (h = (" " + g).split(e), f = { point: this, series: b }[h[1]], h = h[2], f === this && j.hasOwnProperty(h) ? (f = j[h] ? h : "value", f = (c[f + "Prefix"] || "") + Ia(this[h], o(c[f + "Decimals"], -1)) + (c[f + "Suffix"] || "")) : f = f[h], a = a.replace(g, f));
             return a
         },
-        update: function(a, b, c) { var d = this,
+        update: function(a, b, c) {
+            var d = this,
                 e = d.series,
                 f = d.graphic,
                 g, h = e.data,
                 i = h.length,
                 j = e.chart,
                 b = o(b, !0);
-            d.firePointEvent("update", { options: a }, function() { d.applyOptions(a);
-                X(a) && (e.getAttribs(), f && f.attr(d.pointAttr[e.state])); for (g = 0; g < i; g++)
-                    if (h[g] === d) { e.xData[g] = d.x;
+            d.firePointEvent("update", { options: a }, function() {
+                d.applyOptions(a);
+                X(a) && (e.getAttribs(), f && f.attr(d.pointAttr[e.state]));
+                for (g = 0; g < i; g++)
+                    if (h[g] === d) {
+                        e.xData[g] = d.x;
                         e.yData[g] = d.y;
-                        e.options.data[g] = a; break }
+                        e.options.data[g] = a;
+                        break
+                    }
                 e.isDirty = !0;
                 e.isDirtyData = !0;
-                b && j.redraw(c) }) },
+                b && j.redraw(c)
+            })
+        },
         remove: function(a, b) {
             var c = this,
                 d = c.series,
@@ -2964,21 +3380,26 @@
             c.firePointEvent("remove", null, function() {
                 for (f =
                     0; f < h; f++)
-                    if (g[f] === c) { g.splice(f, 1);
+                    if (g[f] === c) {
+                        g.splice(f, 1);
                         d.options.data.splice(f, 1);
                         d.xData.splice(f, 1);
-                        d.yData.splice(f, 1); break }
+                        d.yData.splice(f, 1);
+                        break
+                    }
                 c.destroy();
                 d.isDirty = !0;
                 d.isDirtyData = !0;
                 a && e.redraw()
             })
         },
-        firePointEvent: function(a, b, c) { var d = this,
+        firePointEvent: function(a, b, c) {
+            var d = this,
                 e = this.series.options;
             (e.point.events[a] || d.options && d.options.events && d.options.events[a]) && this.importEvents();
             a === "click" && e.allowPointSelect && (c = function(a) { d.select(null, a.ctrlKey || a.metaKey || a.shiftKey) });
-            E(this, a, b, c) },
+            E(this, a, b, c)
+        },
         importEvents: function() {
             if (!this.hasImportedEvents) {
                 var a = A(this.series.options.point,
@@ -3038,16 +3459,21 @@
                     (b + 1)
             })
         },
-        bindAxes: function() { var a = this,
+        bindAxes: function() {
+            var a = this,
                 b = a.options,
                 c = a.chart,
                 d;
-            a.isCartesian && n(["xAxis", "yAxis"], function(e) { n(c[e], function(c) { d = c.options; if (b[e] === d.index || b[e] === x && d.index === 0) c.series.push(a), a[e] = c, c.isDirty = !0 }) }) },
-        autoIncrement: function() { var a = this.options,
+            a.isCartesian && n(["xAxis", "yAxis"], function(e) { n(c[e], function(c) { d = c.options; if (b[e] === d.index || b[e] === x && d.index === 0) c.series.push(a), a[e] = c, c.isDirty = !0 }) })
+        },
+        autoIncrement: function() {
+            var a = this.options,
                 b = this.xIncrement,
                 b = o(b, a.pointStart, 0);
             this.pointInterval = o(this.pointInterval, a.pointInterval, 1);
-            this.xIncrement = b + this.pointInterval; return b },
+            this.xIncrement = b + this.pointInterval;
+            return b
+        },
         getSegments: function() {
             var a = -1,
                 b = [],
@@ -3061,7 +3487,8 @@
                 } else n(d, function(c, g) { c.y === null ? (g > a + 1 && b.push(d.slice(a + 1, g)), a = g) : g === e - 1 && b.push(d.slice(a + 1, g + 1)) });
             this.segments = b
         },
-        setOptions: function(a) { var b = this.chart.options,
+        setOptions: function(a) {
+            var b = this.chart.options,
                 c = b.plotOptions,
                 d = c[this.type],
                 e = a.data;
@@ -3069,7 +3496,9 @@
             c = A(d, c.series, a);
             c.data = a.data = e;
             this.tooltipOptions = A(b.tooltip, c.tooltip);
-            d.marker === null && delete c.marker; return c },
+            d.marker === null && delete c.marker;
+            return c
+        },
         getColor: function() {
             var a = this.options,
                 b = this.chart.options.colors,
@@ -3078,12 +3507,15 @@
                 !a.colorByPoint && b[c.color++] || "gray";
             c.wrapColor(b.length)
         },
-        getSymbol: function() { var a = this.options.marker,
+        getSymbol: function() {
+            var a = this.options.marker,
                 b = this.chart,
                 c = b.options.symbols,
                 b = b.counters;
-            this.symbol = a.symbol || c[b.symbol++]; if (/^url/.test(this.symbol)) a.radius = 0;
-            b.wrapSymbol(c.length) },
+            this.symbol = a.symbol || c[b.symbol++];
+            if (/^url/.test(this.symbol)) a.radius = 0;
+            b.wrapSymbol(c.length)
+        },
         drawLegendSymbol: function(a) {
             var b = this.options,
                 c = b.marker,
@@ -3113,8 +3545,10 @@
                 m = this.pointClass.prototype;
             ua(d, h);
             if (f && c) f.shift = k + 1;
-            if (g) { if (c) g.shift = k + 1;
-                g.isArea = !0 }
+            if (g) {
+                if (c) g.shift = k + 1;
+                g.isArea = !0
+            }
             b = o(b, !0);
             d = { series: this };
             m.applyOptions.apply(d, [a]);
@@ -3167,12 +3601,17 @@
                 f.isDirtyBox = !0;
             o(b, !0) && f.redraw(!1)
         },
-        remove: function(a, b) { var c = this,
+        remove: function(a, b) {
+            var c = this,
                 d = c.chart,
-                a = o(a, !0); if (!c.isRemoving) c.isRemoving = !0, E(c, "remove", null, function() { c.destroy();
+                a = o(a, !0);
+            if (!c.isRemoving) c.isRemoving = !0, E(c, "remove", null, function() {
+                c.destroy();
                 d.isDirtyLegend = d.isDirtyBox = !0;
-                a && d.redraw(b) });
-            c.isRemoving = !1 },
+                a && d.redraw(b)
+            });
+            c.isRemoving = !1
+        },
         processData: function(a) {
             var b = this.xData,
                 c = this.yData,
@@ -3187,13 +3626,15 @@
             if (l && this.sorted && (!k || d > k || this.forceCrop))
                 if (a = i.getExtremes(),
                     i = a.min, k = a.max, b[d - 1] < i || b[0] > k) b = [], c = [];
-                else if (b[0] < i || b[d - 1] > k) { for (a = 0; a < d; a++)
+                else if (b[0] < i || b[d - 1] > k) {
+                for (a = 0; a < d; a++)
                     if (b[a] >= i) { e = y(0, a - 1); break }
                 for (; a < d; a++)
                     if (b[a] > k) { f = a + 1; break }
                 b = b.slice(e, f);
                 c = c.slice(e, f);
-                g = !0 }
+                g = !0
+            }
             for (a = b.length - 1; a > 0; a--)
                 if (d = b[a] - b[a - 1], d > 0 && (h === x || d < h)) h = d;
             this.cropped = g;
@@ -3256,8 +3697,11 @@
                 n(this.segments || this.points, function(a) { b = b.concat(a) });
                 c && c.reversed && (b = b.reverse());
                 a = b.length;
-                for (h = 0; h < a; h++) { g = b[h];
-                    c = b[h - 1] ? d + 1 : 0; for (d = b[h + 1] ? y(0, T((g[f] + (b[h + 1] ? b[h + 1][f] : e)) / 2)) : e; c >= 0 && c <= d;) i[c++] = g }
+                for (h = 0; h < a; h++) {
+                    g = b[h];
+                    c = b[h - 1] ? d + 1 : 0;
+                    for (d = b[h + 1] ? y(0, T((g[f] + (b[h + 1] ? b[h + 1][f] : e)) / 2)) : e; c >= 0 && c <= d;) i[c++] = g
+                }
                 this.tooltipPoints = i
             }
         },
@@ -3273,19 +3717,25 @@
             return b.headerFormat.replace("{point.key}", e && Aa(a) ?
                 cb(c, a) : a).replace("{series.name}", this.name).replace("{series.color}", this.color)
         },
-        onMouseOver: function() { var a = this.chart,
-                b = a.hoverSeries; if (b && b !== this) b.onMouseOut();
+        onMouseOver: function() {
+            var a = this.chart,
+                b = a.hoverSeries;
+            if (b && b !== this) b.onMouseOut();
             this.options.events.mouseOver && E(this, "mouseOver");
             this.setState("hover");
-            a.hoverSeries = this },
-        onMouseOut: function() { var a = this.options,
+            a.hoverSeries = this
+        },
+        onMouseOut: function() {
+            var a = this.options,
                 b = this.chart,
                 c = b.tooltip,
-                d = b.hoverPoint; if (d) d.onMouseOut();
+                d = b.hoverPoint;
+            if (d) d.onMouseOut();
             this && a.events.mouseOut && E(this, "mouseOut");
             c && !a.stickyTracking && !c.shared && c.hide();
             this.setState();
-            b.hoverSeries = null },
+            b.hoverSeries = null
+        },
         animate: function(a) {
             var b =
                 this,
@@ -3306,11 +3756,13 @@
                     e.duration)
             }
         },
-        afterAnimate: function() { var a = this.chart,
+        afterAnimate: function() {
+            var a = this.chart,
                 b = this.sharedClipKey,
                 c = this.group;
             c && this.options.clip !== !1 && (c.clip(a.clipRect), this.markerGroup.clip());
-            setTimeout(function() { b && a[b] && (a[b] = a[b].destroy(), a[b + "m"] = a[b + "m"].destroy()) }, 100) },
+            setTimeout(function() { b && a[b] && (a[b] = a[b].destroy(), a[b + "m"] = a[b + "m"].destroy()) }, 100)
+        },
         drawPoints: function() {
             var a, b = this.points,
                 c = this.chart,
@@ -3350,16 +3802,24 @@
             n(["hover", "select"], function(b) { i[b] = a.convertAttribs(c[b], i[""]) });
             a.pointAttr = i;
             for (f =
-                h.length; f--;) { g = h[f]; if ((b = g.options && g.options.marker || g.options) && b.enabled === !1) b.radius = 0;
-                e = a.options.colorByPoint; if (g.options)
-                    for (l in k) t(b[k[l]]) && (e = !0); if (e) { b = b || {};
+                h.length; f--;) {
+                g = h[f];
+                if ((b = g.options && g.options.marker || g.options) && b.enabled === !1) b.radius = 0;
+                e = a.options.colorByPoint;
+                if (g.options)
+                    for (l in k) t(b[k[l]]) && (e = !0);
+                if (e) {
+                    b = b || {};
                     j = [];
                     c = b.states || {};
-                    e = c.hover = c.hover || {}; if (!a.options.marker) e.color = qa(e.color || g.color).brighten(e.brightness || d.brightness).get();
+                    e = c.hover = c.hover || {};
+                    if (!a.options.marker) e.color = qa(e.color || g.color).brighten(e.brightness || d.brightness).get();
                     j[""] = a.convertAttribs(r({ color: g.color }, b), i[""]);
                     j.hover = a.convertAttribs(c.hover, i.hover, j[""]);
-                    j.select = a.convertAttribs(c.select, i.select, j[""]) } else j = i;
-                g.pointAttr = j }
+                    j.select = a.convertAttribs(c.select, i.select, j[""])
+                } else j = i;
+                g.pointAttr = j
+            }
         },
         destroy: function() {
             var a =
@@ -3399,8 +3859,11 @@
                     b.style.color = o(b.color, b.style.color,
                         a.color, "black");
                     if (j) j.attr({ text: f }), l = !1;
-                    else if (t(f)) { j = { fill: b.backgroundColor, stroke: b.borderColor, "stroke-width": b.borderWidth, r: b.borderRadius || 0, rotation: i, padding: b.padding, zIndex: 1 }; for (k in j) j[k] === x && delete j[k];
-                        j = c.dataLabel = a.chart.renderer[i ? "text" : "label"](f, 0, -999, null, null, null, b.useHTML).attr(j).css(b.style).add(g).shadow(b.shadow) }
+                    else if (t(f)) {
+                        j = { fill: b.backgroundColor, stroke: b.borderColor, "stroke-width": b.borderWidth, r: b.borderRadius || 0, rotation: i, padding: b.padding, zIndex: 1 };
+                        for (k in j) j[k] === x && delete j[k];
+                        j = c.dataLabel = a.chart.renderer[i ? "text" : "label"](f, 0, -999, null, null, null, b.useHTML).attr(j).css(b.style).add(g).shadow(b.shadow)
+                    }
                     j && a.alignDataLabel(c, j, b, null, l)
                 }
             })
@@ -3425,35 +3888,53 @@
             });
             return c
         },
-        getGraphPath: function() { var a = this,
+        getGraphPath: function() {
+            var a = this,
                 b = [],
                 c, d = [];
-            n(a.segments, function(e) { c = a.getSegmentPath(e);
-                e.length > 1 ? b = b.concat(c) : d.push(e[0]) });
-            a.singlePoints = d; return a.graphPath = b },
-        drawGraph: function() { var a = this.options,
+            n(a.segments, function(e) {
+                c = a.getSegmentPath(e);
+                e.length > 1 ? b = b.concat(c) : d.push(e[0])
+            });
+            a.singlePoints = d;
+            return a.graphPath = b
+        },
+        drawGraph: function() {
+            var a = this.options,
                 b = this.graph,
                 c = this.group,
                 d = a.lineColor || this.color,
                 e = a.lineWidth,
                 f = a.dashStyle,
-                g = this.getGraphPath(); if (b) eb(b), b.animate({ d: g });
-            else if (e) { b = { stroke: d, "stroke-width": e, zIndex: 1 }; if (f) b.dashstyle = f;
-                this.graph = this.chart.renderer.path(g).attr(b).add(c).shadow(a.shadow) } },
+                g = this.getGraphPath();
+            if (b) eb(b), b.animate({ d: g });
+            else if (e) {
+                b = { stroke: d, "stroke-width": e, zIndex: 1 };
+                if (f) b.dashstyle = f;
+                this.graph = this.chart.renderer.path(g).attr(b).add(c).shadow(a.shadow)
+            }
+        },
         invertGroups: function() {
-            function a() { var a = { width: b.yAxis.len, height: b.xAxis.len };
-                n(["group", "trackerGroup", "markerGroup"], function(c) { b[c] && b[c].attr(a).invert() }) } var b = this,
+            function a() {
+                var a = { width: b.yAxis.len, height: b.xAxis.len };
+                n(["group", "trackerGroup", "markerGroup"], function(c) { b[c] && b[c].attr(a).invert() })
+            }
+            var b = this,
                 c = b.chart;
             I(c, "resize", a);
             I(b, "destroy", function() { S(c, "resize", a) });
             a();
-            b.invertGroups = a },
-        plotGroup: function(a, b, c, d, e) { var f = this[a],
+            b.invertGroups = a
+        },
+        plotGroup: function(a, b, c, d, e) {
+            var f = this[a],
                 g = this.chart,
                 h = this.xAxis,
                 i = this.yAxis;
             f || (this[a] = f = g.renderer.g(b).attr({ visibility: c, zIndex: d || 0.1 }).add(e));
-            f.translate(h ? h.left : g.plotLeft, i ? i.top : g.plotTop); return f },
+            f.translate(h ? h.left : g.plotLeft, i ? i.top : g.plotTop);
+            return f
+        },
         render: function() {
             var a =
                 this.chart,
@@ -3479,14 +3960,16 @@
             this.isDirty = this.isDirtyData = !1;
             this.hasRendered = !0
         },
-        redraw: function() { var a = this.chart,
+        redraw: function() {
+            var a = this.chart,
                 b = this.isDirtyData,
                 c = this.group;
             c && (a.inverted && c.attr({ width: a.plotWidth, height: a.plotHeight }), c.animate({ translateX: this.xAxis.left, translateY: this.yAxis.top }));
             this.translate();
             this.setTooltipPoints(!0);
             this.render();
-            b && E(this, "updatedData") },
+            b && E(this, "updatedData")
+        },
         setState: function(a) {
             var b = this.options,
                 c = this.graph,
@@ -3522,8 +4005,11 @@
         },
         show: function() { this.setVisible(!0) },
         hide: function() { this.setVisible(!1) },
-        select: function(a) { this.selected = a = a === x ? !this.selected : a; if (this.checkbox) this.checkbox.checked = a;
-            E(this, a ? "select" : "unselect") },
+        select: function(a) {
+            this.selected = a = a === x ? !this.selected : a;
+            if (this.checkbox) this.checkbox.checked = a;
+            E(this, a ? "select" : "unselect")
+        },
         drawTracker: function() {
             var a = this,
                 b = a.options,
@@ -3569,8 +4055,10 @@
             this.areaPath = this.areaPath.concat(c);
             return b
         },
-        closeSegment: function(a, b) { var c = this.yAxis.getThreshold(this.options.threshold);
-            a.push("L", b[b.length - 1].plotX, c, "L", b[0].plotX, c) },
+        closeSegment: function(a, b) {
+            var c = this.yAxis.getThreshold(this.options.threshold);
+            a.push("L", b[b.length - 1].plotX, c, "L", b[0].plotX, c)
+        },
         drawGraph: function() {
             this.areaPath = [];
             N.prototype.drawGraph.apply(this);
@@ -3726,8 +4214,11 @@
                     isTracker: f,
                     fill: wb,
                     visibility: a.visible ? "visible" : "hidden"
-                }).on(fa ? "touchstart" : "mouseover", function(c) { k = c.relatedTarget || c.fromElement; if (b.hoverSeries !== a && z(k, "isTracker") !== f) a.onMouseOver();
-                    h.onMouseOver() }).on("mouseout", function(b) { if (!g.stickyTracking && (k = b.relatedTarget || b.toElement, z(k, "isTracker") !== f)) a.onMouseOut() }).css(i).add(h.group || j)
+                }).on(fa ? "touchstart" : "mouseover", function(c) {
+                    k = c.relatedTarget || c.fromElement;
+                    if (b.hoverSeries !== a && z(k, "isTracker") !== f) a.onMouseOver();
+                    h.onMouseOver()
+                }).on("mouseout", function(b) { if (!g.stickyTracking && (k = b.relatedTarget || b.toElement, z(k, "isTracker") !== f)) a.onMouseOut() }).css(i).add(h.group || j)
             })
         },
         alignDataLabel: function(a, b, c, d, e) {
@@ -3755,10 +4246,12 @@
                 }), c.animate({ height: a.height, y: a.y }, d.animation))
             }), b.animate = null
         },
-        remove: function() { var a = this,
+        remove: function() {
+            var a = this,
                 b = a.chart;
             b.hasRendered && n(b.series, function(b) { if (b.type === a.type) b.isDirty = !0 });
-            N.prototype.remove.apply(a, arguments) }
+            N.prototype.remove.apply(a, arguments)
+        }
     });
     $.column = ha;
     W.bar = A(W.column);
@@ -3775,10 +4268,14 @@
     za = ca(N, {
         type: "scatter",
         sorted: !1,
-        translate: function() { var a = this;
+        translate: function() {
+            var a = this;
             N.prototype.translate.apply(a);
-            n(a.points, function(b) { b.shapeType = "circle";
-                b.shapeArgs = { x: b.plotX, y: b.plotY, r: a.chart.options.tooltip.snap } }) },
+            n(a.points, function(b) {
+                b.shapeType = "circle";
+                b.shapeArgs = { x: b.plotX, y: b.plotY, r: a.chart.options.tooltip.snap }
+            })
+        },
         drawTracker: function() {
             for (var a = this, b = a.options.cursor, b = b && { cursor: b }, c = a.points, d = c.length, e; d--;)
                 if (e = c[d].graphic) e.element._i = d;
@@ -3792,12 +4289,16 @@
         type: "pie",
         isCartesian: !1,
         pointClass: ca(Ta, {
-            init: function() { Ta.prototype.init.apply(this, arguments); var a = this,
+            init: function() {
+                Ta.prototype.init.apply(this, arguments);
+                var a = this,
                     b;
                 r(a, { visible: a.visible !== !1, name: o(a.name, "Slice") });
                 b = function() { a.slice() };
                 I(a, "select", b);
-                I(a, "unselect", b); return a },
+                I(a, "unselect", b);
+                return a
+            },
             setVisible: function(a) {
                 var b = this.series,
                     c = b.chart,
@@ -3815,14 +4316,16 @@
                 this.legendItem && c.legend.colorizeItem(this, a);
                 if (!b.isDirty && b.options.ignoreHiddenPoint) b.isDirty = !0, c.redraw()
             },
-            slice: function(a, b, c) { var d = this.series.chart,
+            slice: function(a, b, c) {
+                var d = this.series.chart,
                     e = this.slicedTranslation;
                 ua(c, d);
                 o(b, !0);
                 a = this.sliced = t(a) ? a : !this.sliced;
                 a = { translateX: a ? e[0] : d.plotLeft, translateY: a ? e[1] : d.plotTop };
                 this.group.animate(a);
-                this.shadowGroup && this.shadowGroup.animate(a) }
+                this.shadowGroup && this.shadowGroup.animate(a)
+            }
         }),
         pointAttrToOptions: { stroke: "borderColor", "stroke-width": "borderWidth", fill: "color" },
         getColor: function() { this.initialColor = this.chart.counters.color },
@@ -3836,17 +4339,22 @@
             });
             a.animate = null
         },
-        setData: function(a, b) { N.prototype.setData.call(this, a, !1);
+        setData: function(a, b) {
+            N.prototype.setData.call(this, a, !1);
             this.processData();
             this.generatePoints();
-            o(b, !0) && this.chart.redraw() },
-        getCenter: function() { var a = this.options,
+            o(b, !0) && this.chart.redraw()
+        },
+        getCenter: function() {
+            var a = this.options,
                 b = this.chart,
                 c = b.plotWidth,
                 d = b.plotHeight,
                 a = a.center.concat([a.size, a.innerSize || 0]),
                 e = O(c, d),
-                f; return Sa(a, function(a, b) { return (f = /%$/.test(a)) ? [c, d, e, e][b] * w(a) / 100 : a }) },
+                f;
+            return Sa(a, function(a, b) { return (f = /%$/.test(a)) ? [c, d, e, e][b] * w(a) / 100 : a })
+        },
         translate: function() {
             this.generatePoints();
             var a = 0,
@@ -3949,17 +4457,29 @@
                         z = r[y],
                         C = z.length,
                         B;
-                    if (j > 0) { for (v = m - l - j; v <= m + l + j; v += a) x.push(v);
-                        t = x.length; if (C > t) { h = [].concat(z);
-                            h.sort(w); for (v = C; v--;) h[v].rank = v; for (v = C; v--;) z[v].rank >= t && z.splice(v, 1);
-                            C = z.length } for (v = 0; v < C; v++) { b = z[v];
+                    if (j > 0) {
+                        for (v = m - l - j; v <= m + l + j; v += a) x.push(v);
+                        t = x.length;
+                        if (C > t) {
+                            h = [].concat(z);
+                            h.sort(w);
+                            for (v = C; v--;) h[v].rank = v;
+                            for (v = C; v--;) z[v].rank >= t && z.splice(v, 1);
+                            C = z.length
+                        }
+                        for (v = 0; v < C; v++) {
+                            b = z[v];
                             h = b.labelPos;
-                            b = 9999; for (q = 0; q < t; q++) g = L(x[q] - h[1]), g < b && (b = g, B = q); if (B < v && x[v] !== null) B = v;
+                            b = 9999;
+                            for (q = 0; q < t; q++) g = L(x[q] - h[1]), g < b && (b = g, B = q);
+                            if (B < v && x[v] !== null) B = v;
                             else
                                 for (t < C - v + B && x[v] !== null && (B = t - C + v); x[B] === null;) B++;
                             A.push({ i: B, y: x[B] });
-                            x[B] = null }
-                        A.sort(w) }
+                            x[B] = null
+                        }
+                        A.sort(w)
+                    }
                     for (v = 0; v < C; v++) {
                         b = z[v];
                         h = b.labelPos;
@@ -4003,8 +4523,11 @@
         hasBidiBug: Pb,
         numberFormat: Ia,
         seriesTypes: $,
-        setOptions: function(a) { M = A(M, a);
-            Gb(); return M },
+        setOptions: function(a) {
+            M = A(M, a);
+            Gb();
+            return M
+        },
         addEvent: I,
         removeEvent: S,
         createElement: Q,
@@ -4018,9 +4541,14 @@
         splat: na,
         extendClass: ca,
         pInt: w,
-        wrap: function(a, b, c) { var d = a[b];
-            a[b] = function() { var a = Array.prototype.slice.call(arguments);
-                a.unshift(d); return c.apply(this, a) } },
+        wrap: function(a, b, c) {
+            var d = a[b];
+            a[b] = function() {
+                var a = Array.prototype.slice.call(arguments);
+                a.unshift(d);
+                return c.apply(this, a)
+            }
+        },
         svg: Z,
         canvas: U,
         vml: !Z && !U,
