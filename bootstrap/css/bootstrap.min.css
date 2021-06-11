@@ -95,6 +95,7 @@ sub {
 }
 
 img {
+    margin-right: 5px;
     border: 0
 }
 

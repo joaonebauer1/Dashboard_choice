@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <title>HOME</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
 
     <link href="css/main.css" rel="stylesheet">
@@ -14,9 +13,7 @@
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-
     <script type="text/javascript" src="js/lineandbars.js"></script>
-
     <script type="text/javascript" src="js/dash-charts.js"></script>
     <script type="text/javascript" src="js/gauge.js"></script>
 
@@ -35,46 +32,9 @@
 
     <script type="text/javascript" src="js/admin.js"></script>
 
-    <style type="text/css">
-        body {
-            padding-top: 60px;
-        }
-    </style>
-
     <!-- Fontes Google -->
     <link href="http://fonts.googleapis.com/css?family=Raleway:400,300" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-
-            $("#btn-blog-next").click(function() {
-                $('#blogCarousel').carousel('next')
-            });
-            $("#btn-blog-prev").click(function() {
-                $('#blogCarousel').carousel('prev')
-            });
-
-            $("#btn-client-next").click(function() {
-                $('#clientCarousel').carousel('next')
-            });
-            $("#btn-client-prev").click(function() {
-                $('#clientCarousel').carousel('prev')
-            });
-
-        });
-
-        $(window).load(function() {
-
-            $('.flexslider').flexslider({
-                animation: "slide",
-                slideshow: true,
-                start: function(slider) {
-                    $('body').removeClass('loading');
-                }
-            });
-        });
-    </script>
 </head>
 
 <body onload="time()">
@@ -90,11 +50,11 @@
             <span class="icon-bar"></span>
           </button>
                 <a class="navbar-brand" href="index.html"><img src="images/decision.png" alt=""></a>
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="index.html"><i class="icon-home icon-white"></i> Home</a></li>
-                    <li><a href="tables.html"><i class="icon-th icon-white"></i> Tabelas</a></li>
                     <li><a href="login.html"><i class="icon-lock icon-white"></i> Login</a></li>
 
                 </ul>
@@ -120,10 +80,8 @@
                     <h1>Nome Usuário</h1>
                     <br>
                     <div class="info-user">
-                        <span aria-hidden="true" class="li_user fs1"></span>
-                        <span aria-hidden="true" class="li_settings fs1"></span>
                         <span aria-hidden="true" class="li_mail fs1"></span>
-                        <span aria-hidden="true" class="li_key fs1"></span>
+
                     </div>
                 </div>
             </div>
@@ -176,23 +134,6 @@
 
         <!-- CONTAINER ROW 2 -->
         <div class="row">
-            <div class="col-sm-3 col-lg-3">
-
-                <!-- CAIXA BOX VAZIO -->
-                <div class="dash-unit">
-                    <dtitle>Box vazio</dtitle>
-                    <hr>
-                    <div class="framemail">
-                        <div class="window">
-                            <ul class="mail">
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
             <!-- CAIXA OUTRA INFORMAÇÃO -->
             <div class="col-sm-3 col-lg-3">
                 <div class="dash-unit">
@@ -210,26 +151,36 @@
                 </div>
             </div>
 
+            <!-- CAIXA BOX VAZIO -->
+            <div class="col-sm-3 col-lg-3">
+
+                <div class="dash-unit">
+                    <dtitle>Inadimplência</dtitle>
+                    <hr>
+                    <div class="i" id="inadinplentes"></div>
+                    <h2>65%</h2>
+                </div>
+            </div>
+
+
+
+
             <!-- CAIXA MONTH -->
             <div class="col-sm-3 col-lg-3">
                 <div class="dash-unit">
-                    <dtitle>Month</dtitle>
+                    <dtitle>Boletos</dtitle>
                     <hr>
-                    <div class="cont">
+                    <div class="text">
                         <p>
-                            <bold>$879</bold> |
-                            <ok>Approved</ok>
-                        </p>
-                        <br>
-                        <p>
-                            <bold>$377</bold> | Pending</p>
-                        <br>
-                        <p>
-                            <bold>$156</bold> |
-                            <bad>Denied</bad>
-                        </p>
-                        <br>
-                        <p><img src="images/up-small.png" alt=""> 12% Compared Last Month</p>
+                            <img src="images/pago.png " alt="cartao pago">
+                            <p id="pagos">21 Pagos</p>
+                            <p id="total-pagos">Valor total: R$ 1456,00</p>
+                            <hr>
+
+                            <p><img src="images/nao-pago.png" alt="cartao não pago">
+                                <P id="abertos">25 Abertos</p>
+                                <p id="total-abertos">Valor total: R$ 2546,50</p>
+                            </p>
 
                     </div>
 
@@ -349,121 +300,124 @@
             <!-- CAIXA NEWS -->
             <div class="col-sm-3 col-lg-3">
                 <div class="dash-unit">
-                    <dtitle>Boletos</dtitle>
+                    <dtitle>Month</dtitle>
                     <hr>
-                    <div class="info-user">
-                        <span aria-hidden="true" class="li_news fs2"></span>
+                    <div class="cont">
+                        <p>
+                            <bold>$879</bold> |
+                            <ok>Approved</ok>
+                        </p>
+                        <br>
+                        <p>
+                            <bold>$377</bold> | Pending</p>
+                        <br>
+                        <p>
+                            <bold>$156</bold> |
+                            <bad>Denied</bad>
+                        </p>
+                        <br>
+                        <p><img src="images/up-small.png" alt=""> 12% Compared Last Month</p>
+
                     </div>
-                    <br>
-                    <div class="text">
-                        <p></p>
-                        <img src="images/pago.png " alt=""> 25 Pagos
-                        <p>Valor total: ???</p>
+                </div>
+            </div>
+            <!-- FIM CONTAINER 3 -->
+
+            <!-- CONTAINER ROW 4 -->
+            <div class="row">
+
+                <!-- CAIXA NOTIFICAÇÕES -->
+                <div class="col-sm-3 col-lg-3">
+                    <div class="dash-unit">
+                        <dtitle>NOTIFICAÇÕES</dtitle>
                         <hr>
-                        <p><img src="images/nao-pago.png" alt=""> 23 Abertos</p>
-                        <p>Valor total: ???</p>
-                        <p>
-                            <grey>Last Update: 5 minutes ago.</grey>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- FIM CONTAINER 3 -->
-
-        <!-- CONTAINER ROW 4 -->
-        <div class="row">
-
-            <!-- CAIXA NOTIFICAÇÕES -->
-            <div class="col-sm-3 col-lg-3">
-                <div class="dash-unit">
-                    <dtitle>NOTIFICAÇÕES</dtitle>
-                    <hr>
-                    <div class="info-user">
-                        <span aria-hidden="true" class="li_bubble fs2"></span>
-                    </div>
-                    <div class="cont">
-                        <p><button class="btnnew noty" data-noty-options="{&quot;text&quot;:&quot;This is a success notification&quot;,&quot;layout&quot;:&quot;topRight&quot;,&quot;type&quot;:&quot;success&quot;}">Top Right</button></p>
-                        <p><button class="btnnew noty" data-noty-options="{&quot;text&quot;:&quot;This is an informaton notification&quot;,&quot;layout&quot;:&quot;topLeft&quot;,&quot;type&quot;:&quot;information&quot;}">Top Left</button></p>
-                        <p><button class="btnnew noty" data-noty-options="{&quot;text&quot;:&quot;This is an alert notification with fade effect.&quot;,&quot;layout&quot;:&quot;topCenter&quot;,&quot;type&quot;:&quot;alert&quot;,&quot;animateOpen&quot;: {&quot;opacity&quot;: &quot;show&quot;}}">Top Center (fade)</button></p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CAIXA CHART -->
-            <div class="col-sm-3 col-lg-3">
-                <div class="dash-unit">
-                    <dtitle>Chart</dtitle>
-                    <hr>
-                    <div class="info-user">
-                        <span aria-hidden="true" class="li_lab fs2"></span>
-                    </div>
-                    <canvas id="canvas" width="300" height="300">
-			</canvas></div>
-            </div>
-
-            <div class="col-sm-3 col-lg-3">
-
-                <!-- CAIXA USUARIO REGISTRADO -->
-                <div class="half-unit">
-                    <dtitle>USUARIO REGISTRADO</dtitle>
-                    <hr>
-                    <div class="cont2">
-                        <img src="images/user-avatar.jpg" alt="">
-                        <br>
-                        <br>
-                        <p>Paul Smith</p>
-                        <p>
-                            <bold>Liverpool, England</bold>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- CAIXA MODAL -->
-                <div class="half-unit">
-                    <dtitle>Modal</dtitle>
-                    <hr>
-                    <div class="cont">
-                        <a href="#myModal" role="button" class="btnnew" data-toggle="modal">Example Modal Window</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">Modal title</h4>
+                        <div class="info-user">
+                            <span aria-hidden="true" class="li_bubble fs2"></span>
                         </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                        <div class="cont">
+                            <p><button class="btnnew noty" data-noty-options="{&quot;text&quot;:&quot;This is a success notification&quot;,&quot;layout&quot;:&quot;topRight&quot;,&quot;type&quot;:&quot;success&quot;}">Top Right</button></p>
+                            <p><button class="btnnew noty" data-noty-options="{&quot;text&quot;:&quot;This is an informaton notification&quot;,&quot;layout&quot;:&quot;topLeft&quot;,&quot;type&quot;:&quot;information&quot;}">Top Left</button></p>
+                            <p><button class="btnnew noty" data-noty-options="{&quot;text&quot;:&quot;This is an alert notification with fade effect.&quot;,&quot;layout&quot;:&quot;topCenter&quot;,&quot;type&quot;:&quot;alert&quot;,&quot;animateOpen&quot;: {&quot;opacity&quot;: &quot;show&quot;}}">Top Center (fade)</button></p>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- CONTAINER CONTATO -->
-            <div class="col-sm-3 col-lg-3">
-                <div class="dash-unit">
-                    <dtitle>CONTATO</dtitle>
-                    <hr>
-                    <div class="cont">
-                        <form action="#get-in-touch" method="POST" id="contact">
-                            <input type="text" id="contactname" name="contactname" placeholder="Name">
-                            <input type="text" id="email" name="email" placeholder="Email">
-                            <div class="textarea-container"><textarea id="message" name="message" placeholder="Message"></textarea></div>
-                            <input type="submit" id="submit" name="submit" value="Send">
-                        </form>
+                <!-- CAIXA CHART -->
+                <div class="col-sm-3 col-lg-3">
+                    <div class="dash-unit">
+                        <dtitle>Chart</dtitle>
+                        <hr>
+                        <div class="info-user">
+                            <span aria-hidden="true" class="li_lab fs2"></span>
+                        </div>
+                        <canvas id="canvas" width="300" height="300"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 col-lg-3">
+
+                    <!-- CAIXA USUARIO REGISTRADO -->
+                    <div class="half-unit">
+                        <dtitle>USUARIO REGISTRADO</dtitle>
+                        <hr>
+                        <div class="cont2">
+                            <img src="images/user-avatar.jpg" alt="">
+                            <br>
+                            <br>
+                            <p>Paul Smith</p>
+                            <p>
+                                <bold>Liverpool, England</bold>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CAIXA MODAL -->
+                    <div class="half-unit">
+                        <dtitle>Modal</dtitle>
+                        <hr>
+                        <div class="cont">
+                            <a href="#myModal" role="button" class="btnnew" data-toggle="modal">Example Modal Window</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">Modal title</h4>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTAINER CONTATO -->
+                <div class="col-sm-3 col-lg-3">
+                    <div class="dash-unit">
+                        <dtitle>CONTATO</dtitle>
+                        <hr>
+                        <div class="cont">
+                            <form action="#get-in-touch" method="POST" id="contact">
+                                <input type="text" id="contactname" name="contactname" placeholder="Name">
+                                <input type="text" id="email" name="email" placeholder="Email">
+                                <div class="textarea-container"><textarea id="message" name="message" placeholder="Message"></textarea></div>
+                                <input type="submit" id="submit" name="submit" value="Send">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!--FIM CONTAINER ROW 4 -->
 
     <!--RODAPÉ -->
