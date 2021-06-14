@@ -480,7 +480,7 @@
     }
     /**********DONUT CHARTS STYLES**********/
     
-    #load {
+    #inativos {
         width: 11.313em;
         height: 11.313em;
         -moz-border-radius: 5px;
@@ -490,7 +490,27 @@
         margin: auto;
     }
     
-    #space {
+    #ativos {
+        width: 11.313em;
+        height: 11.313em;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        margin-bottom: 1.063em;
+        background-position: center center;
+        margin: auto;
+    }
+    
+    #impedidos {
+        width: 11.313em;
+        height: 11.313em;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        margin-bottom: 1.063em;
+        background-position: center center;
+        margin: auto;
+    }
+    
+    #inadimplencia {
         width: 11.313em;
         height: 11.313em;
         -moz-border-radius: 5px;
