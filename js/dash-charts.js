@@ -327,7 +327,7 @@ $(document).ready(function() {
 
         xAxis: {
             accessibility: {
-                rangeDescription: 'Range: 2016 to 2021'
+                rangeDescription: 'Range: 2018 to 2021'
             }
         },
 
@@ -342,13 +342,13 @@ $(document).ready(function() {
                 label: {
                     connectorAllowed: false
                 },
-                pointStart: 2016
+                pointStart: 2018
             }
         },
 
         series: [{
             name: '',
-            data: [177, 25000, 97031, 102501, 137133, 154175]
+            data: [25000, 97031, 102501, 137133]
         }, ],
 
         responsive: {
