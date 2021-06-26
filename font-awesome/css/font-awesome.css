@@ -19,7 +19,7 @@
 }
 
 
-/* makes the font 33% larger relative to the icon container */
+/* torna a fonte 33% maior em relação ao container do ícone */
 
 .fa-lg {
     font-size: 1.33333333em;
@@ -214,10 +214,6 @@
 .fa-inverse {
     color: #ffffff;
 }
-
-
-/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
-   readers do not read off random characters that represent icons */
 
 .fa-glass:before {
     content: "\f000";

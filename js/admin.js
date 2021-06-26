@@ -1,12 +1,3 @@
-function time() { // Busca hora em tempo real
-    today = new Date();
-    h = today.getHours();
-    m = today.getMinutes();
-    s = today.getSeconds();
-    document.getElementById('relogio').innerHTML = h + ":" + m + ":" + s;
-    setTimeout('time()', 500);
-}
-
 $.validator.setDefaults({
     submitHandler: function() {
         window.open('dashboard.html', '_self', false)
@@ -14,10 +5,10 @@ $.validator.setDefaults({
 });
 
 $().ready(function() {
-    // validate the comment form when it is submitted
+    // validar o formulário de comentário quando ele for enviado
     $("#commentForm").validate();
 
-    // validate signup form on keyup and submit
+    // validar o formulário de inscrição no keyup e enviar
     $("#signupForm").validate({
         rules: {
             firstname: "required",
@@ -62,7 +53,7 @@ $().ready(function() {
         }
     });
 
-    // propose username by combining first- and lastname
+    // propor nome de usuário combinando nome e sobrenome
     $("#username").focus(function() {
         var firstname = $("#firstname").val();
         var lastname = $("#lastname").val();
@@ -71,13 +62,13 @@ $().ready(function() {
         }
     });
 
-    //code to hide topic selection, disable for demo
+    //código para ocultar a seleção de tópicos, desabilite para demonstração
     var newsletter = $("#newsletter");
-    // newsletter topics are optional, hide at first
+    // newsletter tópicos são opcionais, primeiro esconda
     var inital = newsletter.is(":checked");
     var topics = $("#newsletter_topics")[inital ? "removeClass" : "addClass"]("gray");
     var topicInputs = topics.find("input").attr("disabled", !inital);
-    // show when newsletter is checked
+    // mostrar quando o newsletter informativo é verificado
     newsletter.click(function() {
         topics[this.checked ? "removeClass" : "addClass"]("gray");
         topicInputs.attr("disabled", !this.checked);
