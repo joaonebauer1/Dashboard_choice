@@ -22,7 +22,7 @@ function($) {
         }
     }
 
-    // http://blog.alexmaccaw.com/css-transitions
+
     $.fn.emulateTransitionEnd = function(duration) {
         var called = false,
             $el = this

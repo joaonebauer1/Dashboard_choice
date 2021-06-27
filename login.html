@@ -11,13 +11,9 @@
 
     <link href="css/login.css" rel="stylesheet">
 
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-
     <link href="http://fonts.googleapis.com/css?family=Raleway:400,300" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-    <!-- Jquery Validate Script -->
-    <script type="text/javascript" src="js/jquery.validate.js"></script>
+
 </head>
 
 
@@ -54,22 +50,25 @@
                     <img src="images/avatar_profile.jpg" alt="" class="img-circle">
                     <br>
                     <br>
-                    <form class="cmxform" id="signupForm" method="get" action="">
+                    <form class="cmxform" id="signupForm" method="post" action="">
                         <fieldset>
                             <p>
-                                <input id="username" name="username" type="text" placeholder="Usuário" required>
-                                <input id="password" name="password" type="password" placeholder="Senha" required>
+                                <input id="username" runat="server" name="username" type="text" placeholder="Usuário" required>
+                                <input id="password" runat="server" name="password" type="password" placeholder="Senha" required>
                             </p>
-                            <input class="submit btn-success btn btn-large" type="submit" value="Entrar">
+                            <input class="submit btn-success btn btn-large" type="submit" value="Entrar" onclick="return Login()">
                         </fieldset>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
+    <script type="text/javascript" src="js/admin.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- Jquery Validate Script -->
+    <script type="text/javascript" src="js/jquery.validate.js"></script>
 </body>
 
 </html>
