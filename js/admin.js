@@ -5,46 +5,22 @@ var usuarios = [
 ];
 
 function Login() {
-    var usuario = document.getElementsByName('username')[0].value.toLowerCase();
-    var senha = document.getElementsByName('password')[0].value;
-
+    debugger;
+    var usuario = $('#username').val();  
+    var senha = $('#password').val();       
     for (var u in usuarios) {
         var us = usuarios[u];
-        if (us.login === usuario && us.senha === senha) {
-            window.location.href = "http://127.0.0.1:5500/index.html";
-            return true;
+        if (us.login == usuario && us.senha == senha) {            
+            sessionStorage.setItem('user', true);                        
         }
+    }     
+    if(sessionStorage.getItem('user')){                
+        window.location.replace('/index.html');  
+        return true;          
     }
-    alert("Dados incorretos, tente novamente.");
-    window.location = "login.html";
-    return false;
-}
-
-$.validator.setDefaults({
-    submitHandler: function() {
-        window.open('dashboard.html', '_self', false)
+    else{    
+        alert("Dados incorretos, tente novamente.");        
+        window.location.href = "./login.html";
+        return false;
     }
-});
-
-
-
-//----------------------------------------------------------
-
-$(window).load(function() {
-
-    $('.flexslider').flexslider({
-        animation: "slide",
-        slideshow: true,
-        start: function(slider) {
-            $('body').removeClass('loading');
-        }
-    });
-});
-
-//---------------------------------------------
-function fazGet(url) {
-    let request = new XMLHttpRequest()
-    request.open("GET", url, false)
-    request.send()
-    return request.responseText
 }

@@ -3,51 +3,28 @@
 
 <head>
     <meta charset="utf-8">
-    <title>BLOCKS - Bootstrap Dashboard Theme</title>
+    <title>Login | Dashboard Realdrive</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- styles -->
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
 
-    <link href="css/login.css" rel="stylesheet">
-
+    <link href="css/login.css" rel="stylesheet">    
     <link href="http://fonts.googleapis.com/css?family=Raleway:400,300" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
 
 </head>
 
 
-<body style="background:url('images/bg.jpg') no-repeat center center; height:500px;" id="fundo">
-
-    <!-- CABEÇALHO -->
-
-    <div class="navbar-nav navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-                <a class="navbar-brand" href="index.html"><img src="images/decision.png" alt=""></a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="index.html"><i class="icon-home icon-white"></i> Home</a></li>
-                    <li class="active"><a href="login.html"><i class="icon-lock icon-white"></i> Login</a></li>
-
-
-                </ul>
-            </div>
-            <!--FIM CABEÇALHO -->
-        </div>
+<body style="background-color: #363636">
+    <div style="align-items:center;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;margin-top:5%;">
+        <img src="images/img_rdscan_logo.png" width="30%" height="30%">
     </div>
-
     <div class="container">
         <div class="row">
             <div class="col-lg-offset-4 col-lg-4" style="margin-top:100px">
                 <div class="block-unit" style="text-align:center; padding:8px 8px 8px 8px;">
-                    <img src="images/avatar_profile.jpg" alt="" class="img-circle">
+                    <img src="images/icon_avatar_admin_two.png" alt="" class="img-circle">
                     <br>
                     <br>
                     <form class="cmxform" id="signupForm" method="post" action="">
@@ -56,7 +33,7 @@
                                 <input id="username" runat="server" name="username" type="text" placeholder="Usuário" required>
                                 <input id="password" runat="server" name="password" type="password" placeholder="Senha" required>
                             </p>
-                            <input class="submit btn-success btn btn-large" type="submit" value="Entrar" onclick="return Login()">
+                            <input id="btnLogin" class="submit btn-success btn btn-large" type="submit" value="Entrar" onclick="Login()">
                         </fieldset>
                     </form>
                 </div>
@@ -64,8 +41,8 @@
         </div>
     </div>
     <script type="text/javascript" src="js/admin.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>    
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <!-- Jquery Validate Script -->
     <script type="text/javascript" src="js/jquery.validate.js"></script>

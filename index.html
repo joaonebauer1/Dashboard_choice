@@ -8,12 +8,10 @@
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
 
     <!-- CSS -->
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/font-style.css" rel="stylesheet">
-    <link href="css/flexslider.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">    
     <script src="https://code.highcharts.com/highcharts.js"></script>
 
-    <!-- Fontes Google -->
+    <!-- Fontes Google -->    
     <link href="http://fonts.googleapis.com/css?family=Raleway:400,300" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
 </head>
@@ -21,7 +19,6 @@
 <body>
 
     <!--  CABEÇALHO -->
-
     <div class="navbar-nav navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -30,16 +27,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-                <a class="navbar-brand" href="index.html"><img src="images/decision.png" alt=""></a>
+                <a class="navbar-brand" href="index.html"><img src="images/img_rdscan_logo.png" width="200px" height="40px" alt=""></a>
 
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html"><i class="icon-home icon-white"></i> Home</a></li>
-                    <li><a href="login.html"><i class="icon-lock icon-white"></i> Login</a></li>
-
-                </ul>
-            </div>
+            </div>            
             <!--FIM CABEÇALHO -->
         </div>
     </div>
@@ -55,26 +45,25 @@
                     <dtitle>Usuário</dtitle>
                     <hr>
                     <div class="thumbnail">
-                        <img src="images/avatar_profile.jpg" class="img-circle">
+                        <img src="images/icon_avatar_admin_two.png" class="img-circle">                    
                     </div>
-
-                    <h1>Nome Usuário</h1>
+                    <h3>Nome Usuário</h3>
                     <br>
-                    <div class="info-user">
-                        <a href="https://outlook.live.com" target="_blank" aria-hidden="true" class="li_mail fs1">
-                            <img src="images/email.png"" alt="">
+                    <div class="thumbnail">
+                        <a href="login.html" aria-hidden="true" class="li_mail fs1">
+                            <img src="images/sair.png" width="50px" height="50px" alt="Sair">
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- CAIXA SITE -->
+            <!-- CAIXA Contratos Ativos -->
             <div class="col-sm-3 col-lg-3">
                 <div class="dash-unit">
                     <dtitle>contratos - Ativos</dtitle>
                     <hr>
                     <div id="ativos"></div>
-                    <h2 id="numero-site">45%</h2>
+                    <h2 id="active-contracts"></h2>
                 </div>
             </div>
 
@@ -84,18 +73,18 @@
                     <dtitle>Contratos - inativos</dtitle>
                     <hr>
                     <div id="inativos"></div>
-                    <h2>50%</h2>
+                    <h2 id="inactive-contracts"></h2>
                 </div>
             </div>
 
             <div class="col-sm-3 col-lg-3">
 
-                <!-- CAIXA RELÓGIO -->
+                <!-- CAIXA Contratos - impedidos -->
                 <div class="dash-unit">
                     <dtitle>contratos impedidos</dtitle>
                     <hr>
                     <div id="impedidos"></div>
-                    <h2 id="numero-site">45%</h2>
+                    <h2 id="denied-contracts"></h2>
                 </div>
             </div>
         </div>
@@ -135,21 +124,21 @@
                 </div>
             </div>
 
-            <!-- CAIXA BOX VAZIO -->
+            <!-- CAIXA inadimplencia -->
             <div class="col-sm-3 col-lg-3">
 
                 <div class="dash-unit">
                     <dtitle>Inadimplência</dtitle>
                     <hr>
                     <div class="inadimplencia" id="inadimplentes"></div>
-                    <h2>65%</h2>
+                    <h2 id="percentual-lates"></h2>
                 </div>
             </div>
 
 
 
 
-            <!-- CAIXA MONTH -->
+            <!-- CAIXA boletos -->
             <div class="col-sm-3 col-lg-3">
                 <div class="dash-unit">
                     <dtitle>Boletos</dtitle>
@@ -157,13 +146,13 @@
                     <div class="text">
                         <p>
                             <img src="images/pago.png " alt="cartao pago">
-                            <p id="pagos">21 Pagos</p>
-                            <p id="total-pagos">Valor total: R$ 1456,00</p>
+                            <p id="count-paid-tickets"></p>
+                            <p id="amount-paid-tickets"></p>
                             <hr>
 
                             <p><img src="images/nao-pago.png" alt="cartao não pago">
-                                <P id="abertos">25 Abertos</p>
-                                <p id="total-abertos">Valor total: R$ 2546,50</p>
+                                <P id="count-open-tickets"></p>
+                                <p id="amount-open-tickets"></p>
                             </p>
 
                     </div>
@@ -180,29 +169,29 @@
         <div class="row">
             <div class="col-sm-3 col-lg-3">
 
-                <!-- CAIXA STOCK -->
+                <!-- CAIXA Aulas Práticas -->
                 <div class="half-unit">
-                    <dtitle>Aulas práticas</dtitle>
+                    <dtitle>Aulas práticas - Mensal no dia</dtitle>
                     <hr>
                     <div class="cont">
                         <p>
-                            <img src="images/ok.png" alt=""> 41 Aprovadas
+                            <img src="images/ok.png" alt=""><span id="qualified-lesson"></span>
                             <br>
                             <br>
-                            <img src="images/waiting.png" alt=""> 50 Contingentes</p>
+                            <img src="images/waiting.png" alt=""><span id="contingency-lesson"></span></p>
                     </div>
                 </div>
 
-                <!-- CAIXA LISTA -->
+                <!-- CAIXA Aulas Teóricas Real Time -->
                 <div class="half-unit">
-                    <dtitle>Aulas teóricas</dtitle>
+                    <dtitle>Aulas teóricas - Real Time</dtitle>
                     <hr>
                     <div class="cont">
                         <p>
-                            <img src="images/agenda.png " alt=""> 100 Alunos agendados
+                            <img src="images/agenda.png " alt=""><span id="student-planned"></span>
                             <br>
                             <br>
-                            <img src="images/ok.png" alt=""> 75 Alunos presentes</p>
+                            <img src="images/ok.png" alt=""><span id="student-present"></span></p>
                     </div>
 
                 </div>
@@ -210,37 +199,37 @@
 
             <div class="col-sm-3 col-lg-3">
 
-                <!-- CAIXA VISITAS -->
+                <!-- CAIXA Aulas Práticas Agendamentos -->
                 <div class="half-unit">
-                    <dtitle>Agendamento (aulas práticas)</dtitle>
+                    <dtitle>Agendamento (práticas) - Mensal no dia</dtitle>
                     <hr>
                     <div class="cont">
                         <p>
-                            <img src="images/up-small.png" alt=""> 412 Realizadas
+                            <img src="images/up-small.png" alt=""><span id="performed-lesson"></span>
                             <br>
                             <br>
-                            <img src="images/down-small.png" alt=""> 89 Canceladas</p>
+                            <img src="images/down-small.png" alt=""><span id="canceled-lesson"></span></p>
                     </div>
                 </div>
 
-                <!-- CAIXA BLOCK -->
+                <!-- CAIXA Aulas Teóricas Agendamentos -->
                 <div class="half-unit">
-                    <dtitle>Aulas teóricas</dtitle>
+                    <dtitle>Agendamento (teóricas) - Mensal no dia</dtitle>
                     <hr>
                     <div class="cont">
                         <div class="cont">
                             <p>
-                                <img src="images/agenda.png " alt=""> 25 Aulas agendados
+                                <img src="images/agenda.png " alt=""><span id="planned-lesson"></span>
                                 <br>
                                 <br>
-                                <img src="images/ok.png" alt=""> 23 Aulas realizadas</p>
+                                <img src="images/ok.png" alt=""><span id="completed-lesson"></span></p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-sm-3 col-lg-3">
-                <!-- CAIXA TOTAL INSCRITOS -->
+                <!-- CAIXA Total Kits Práticos -->
                 <div class="dash-unit">
                     <dtitle>Kits práticos veiculares</dtitle>
                     <hr>
@@ -249,7 +238,7 @@
                         <br>
                         <p><img src="images/kit.png" alt="">
                             <br>
-                            <bold>5</bold>
+                            <bold><span id="pratical-kit"></span></bold>
                             <bold>Instalados</bold>
                         </p>
                     </div>
@@ -257,7 +246,7 @@
                 </div>
             </div>
 
-            <!-- CAIXA NEWS -->
+            <!-- CAIXA Total Kits Teóricos -->
             <div class="col-sm-3 col-lg-3">
                 <div class="dash-unit">
                     <dtitle>Kits teóricos</dtitle>
@@ -267,7 +256,7 @@
                         <br>
                         <p><img src="images/kit-teorico.png" alt="">
                             <br>
-                            <bold id="kit">5</bold>
+                            <bold><span id="theoretical-kit"></span></bold>
                             <bold>Instalados</bold>
                         </p>
                     </div>
@@ -284,7 +273,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-lg-12">
-                        <p><img src="images/decision_rodape.png" alt=""></p>
+                        <p><img src="images/img_rdscan_logo.png" width="200px" height="40px" alt=""></p>
                         <p>Choice dashboard - Projeto integrador UCS - 2021</p>
                     </div>
 
@@ -294,12 +283,8 @@
     </div>
 </body>
 
-
-<script type="" src="teste.js"></script>
-
-
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/lineandbars.js"></script>
+<!--<script type="text/javascript" src="js/lineandbars.js"></script>-->
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/lineandbars.js"></script>
 <script type="text/javascript" src="js/dash-charts.js"></script>
@@ -316,4 +301,6 @@
 <script type="text/javascript" src="js/noty/themes/default.js"></script>
 <script src="js/jquery.flexslider.js" type="text/javascript"></script>
 
+<!-- JAVASCRIPTS Ajax-->
+<script type="text/javascript" src="js/serverRequisitions.js"></script>
 </html>

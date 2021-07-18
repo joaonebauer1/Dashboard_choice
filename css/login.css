@@ -41,9 +41,14 @@ input[type=color],
 .block-unit {
     margin-bottom: 30px;
     padding-bottom: 10px;
-    border: 1px solid #7584f2;
-    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #8cc63f;
+    background: #363636;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+}
+
+#btnSignon {
+    background-color: #8cc63f;
+    border-color: #8cc63f;
 }
